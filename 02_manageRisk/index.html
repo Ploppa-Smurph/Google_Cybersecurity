@@ -192,22 +192,125 @@
 <h2>02.06 CIA Triad: Confidentiality, Integrity, Availability</h2>
 <pre>
     <b>01) Explore the CIA Triad</b>
+                protect assets and data from threat actors
+              CIA model helps inform organizations how to consider risks when setting up systems and security policies   
+         Confidentiality: only authorized users can access specific assets (least privilege)
+         Integrity: data is correct, authentic, and reliable
+         Availability: data is accessible to those who are authorized to access it   
+
     <b>02) Use the CIA Triad to Protect Organizations</b>
     <b>03) Use the CIA Triad in Work Place Situations</b>
 </pre>
 <h2>02.07 NIST Frameworks</h2>
 <pre>
-    <b>01) </b>
-    <b>02) </b>
-    <b>03) </b>
-    <b>04) </b>
+    <b>01) NIST Frameworks</b>
+                National Institute of Standards and Technology
+            - CSF (Cybersecurity Framework): voluntary framework consisting of standards, guidelines, and best practices to manage cybersecurity risk 
+                    - Identify
+                    - Protect
+                    - Detect
+                    - Respond
+                    - Recover
+                ex: you get a high-risk notification that a workstation has been comprimised:
+                       1st Identify which workstation -- you discover it has an unknown device plugged in
+                       2nd Protect: you block the device from transmitting data to protect the organization from additional harm
+                       3rd Detect: after removing the workstation from the network you use tools to detect and determine any additional behavior and learn more about the device 
+                       4th Respond: you respond by investigating the incident who used the device? how did the threat occur? what was affected? where did the attack originate?      
+                       5th Recover: try to recover files or data and correct any damage caused, get the workstation back up on the network
+            - RMF (Risk Management Framework): 
+
+    <b>02) Explore the 5 Functions of the NIST Cybersecurity Framework</b>
+            - Identify: manage risks and their effect on organization's people and assets
+                ex: you monitor and identify devices that can pose a risk on organization's network
+            - Protect: implementing policies, procedures, training and tools to mitigate cybersecurity threats
+                ex: study historical data and update policy and procedure to actively protect systems
+            - Detect: finding security threats and improving monitoring capabilities to increase speed and efficiency of detections
+                ex: 
+            - Respond: using proper procedure to contain, neutralize, and analyze security incidents and implement improvements to the security process 
+                ex: 
+            - Recover: returning affected systems back to normal working state 
 </pre>
 <h2>02.08 OWASP Principles and Security Audits</h2>
 <pre>
-    <b>01) </b>
-    <b>02) </b>
-    <b>03) </b>
-    <b>04) </b>
+    <b>01) OWASP Security Principles</b>
+            Open Web Application Security Project principles 
+            1) Minimize the Attack Surface Area: reduce all potential vulnerabilities that can be exploited
+                    attack vector examples: phishing emails and weak password
+            2) Principle of Least Privilege: limiting access to assets
+            3) Defense in Depth: have multiple controls to address each threat in different ways
+                    ex: MFA, firewalls, intrusion detection system, permission settings -- all used together they help create multiple levels of defense  
+            4) Seperation of Duties: not having privileges that you can abuse
+                    ex: person that signs paychecks should not be the person preparing them
+            5) Keep Security Simple: 
+            6) Fix Security Issues Correctly:               
+    <b>02) More About OWASP Security Principles</b>
+                additonal OWASP security principles include:
+            7) Establish Secure Defaults: the optimal secure state should be the default state
+            8) Fail Securely: if something goes wrong have failsafes in place to prevent problems.
+                 ex: if firewall fails it should close all open connections and prevent additional ones
+            9) Don't Trust Services: when working with 3rd parties always double check security standards and information
+            10) Avoid Security by Obscurity: instead of keeping code secret make certain an app is secure by:
+                    including reasonable password policies, following 'defense in depth', business transaction limits, solid network architecture, and fraud and audit controls           
+    <b>03) Stay up-to-date on the Latest Cybersecurity Threats</b>
+                online forums (ie: <a href="https://medium.com/tag/cybersecurity">Medium</a>)
+
+    <b>04) Plan a Security Audit</b>
+            Security Audit = review of organization's security controls, policies, and procedures against a set of expectations
+                2 types: external and internal security audits -- we are focusing on internal security audit
+                    internal audits are normally conducted by a team, including an organization's compliance officer, security manager, and other security team members 
+                            internal audits inform organization's security posture and to maintain compliance with changing laws and standards
+                the purpose of internal security audits: Identify organizational risk, Assess controls, Correct Compliance issues        
+
+            elements of audits: 
+                1) Establishing the scope and goal of the audit
+                        scope = the specific criteria of the security audit
+                           scope identifies people, policies, procedures, assets, and technologies that might impact the security posture
+                        goals = outline of security objectives or what needs to be achieved to improve security posture
+                2) Conducting a Risk Assessment
+                3) Completing a Controls Assessment
+                4) Assessing Compliance
+                5) Communicating Results to Stakeholders
+
+    <b>05) Complete a Security Audit</b>
+                discuss security audits part 02:
+                  ask yourself: what is the audit meant to achieve? Which assets are most at risk?
+                       are current controls sufficient? if not what compliance regulations need to be implemented? 
+                3) Completing a Controls Assessment: 
+                           administrative - human controls - password policies and additional procedure
+                           technical - hardware and software used to protect assets (ie: intrusion detection and data encryption)
+                           physical - prevent physical intrusion (ie: CCTV, Locks, Badges, Security Guards, etc) 
+                4) Assessing Compliance: make certain that all regulatory standards are upheld
+                5) Communicating Results to Stakeholders: sumarize scope and goals then list existing risks and note priority of risks. 
+                                also must identify compliance regulations and provide any recommendations for improving organizations security posture
+
+    <b>06) More About Security Audits</b>
+            1) Identify the scope of the audit
+                The audit should:
+                    -List assets that will be assessed (e.g., firewalls are configured correctly, PII is secure, physical assets are locked, etc.) 
+                    -Note how the audit will help the organization achieve its desired goals
+                    -Indicate how often an audit should be performed
+                    -Include an evaluation of organizational policies, protocols, and procedures to make sure they are working as intended and being implemented by employees
+        
+            2) Complete a risk assessment
+                A risk assessment is used to evaluate identified organizational risks related to budget, controls, internal processes, and external standards (i.e., regulations).
+    
+            3) Conduct the audit
+                When conducting an internal audit, you will assess the security of the identified assets listed in the audit scope.
+    
+            4) Create a mitigation plan
+                A mitigation plan is a strategy established to lower the level of risk and potential costs, penalties, or other issues that can negatively affect the organization’s security posture. 
+    
+            5) Communicate results to stakeholders
+                The end result of this process is providing a detailed report of findings, suggested improvements needed to lower the organization's level of risk, and compliance regulations and standards the organization needs to adhere to. 
+
+    <b>07) Portfolio Activity: Conduct Security Audit pt 01</b>
+
+    <b>08) Portfolio Activity Exemplar pt 01</b>
+
+    <b>09) Portfolio Activity: Conduct Security Audit pt 02</b>
+
+    <b>10) Portfolio Activity Exemplar pt 02</b>
+
 </pre>
 <h2>02.09 Review: Security Frameworks and Controls</h2>
 <pre>
