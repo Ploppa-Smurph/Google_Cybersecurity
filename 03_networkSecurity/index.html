@@ -60,32 +60,125 @@
                 Virtualization Tools: software that perform network operations, offered by cloud service providers 
 
         <b>07) Network Components, Devices, and Diagrams</b>
-            <img src="/networkDevices.png" alt="network device layout" />
-        
+            <img src="../networkDevices.png" alt="network device layout" />
+              
+            MAC Address - unique to each device. first half of address = manufacturer information
+            IP Address - assigned to device, most dynamic now - servers often have assigned IP addresses
+            Firewalls - network security device that monitors traffic. Can restrict specific incoming and outgoing network traffic. often reside between secured internal network and untrusted outside sources (ie: the internet)
+            Servers - provide services (web hosting, email, DNS Server, File Server, etc..) part of the Client-Server Model
+            Hubs - direct traffic to ALL, not as secure as Switch
+            Switch - directs network traffic, more secure than Hub because it directs traffic to intended destination ONLY
+            Modems - Interface to ISP - send and receive traffic form the internet and translates into digital signals that devices on the network can understand.
+            Wireless Access Point - uses radio waves for wireless communication.
+                Wi-Fi: set of standards used by network devices to communicate wirelessly
+            Network Diagrams - topographical map that shows devices on the network and how they connect. 
+
         <b>08) Design a Local Area Network</b>
         
         <b>09) Cloud Networks</b>
+                    not locally hosted
+                        can reduce cost by being more flexible
+                Cloud Computing = using remote servers, applications, and network services that are hosted on the internet instead of local physical devices
+                 Cloud Network = collection of servers or computers that store resources and data in remote data centers that can be accessed via the internet
+                    Cloud providers offer:
+                        - on-demand storage
+                        - processing power as needed
+                        - analytics for monitoring web traffic         
         
         <b>10) Cloud Computing and Software-defined Networks</b>
-        
+                    - Software as a service (SaaS) refers to software suites operated by the CSP that a company can use remotely without hosting the software. 
+                    - Infrastructure as a service (Iaas) refers to the use of virtual computer components offered by the CSP. These include virtual containers and storage that are configured remotely through the CSP’s API or web console. Cloud-compute and storage services can be used to operate existing applications and other technology workloads without significant modifications. Existing applications can be modified to take advantage of the availability, performance, and security features that are unique to cloud provider services.
+                    - Platform as a service (PaaS) refers to tools that application developers can use to design custom applications for their company. Custom applications are designed and accessed in the cloud and used for a company’s specific business needs.
+                Hybrid environment - both Cloud and On-site networks are utilized
+                Software Defined Networks (SDNs) - made of virtual network devices and services, virtual switches, routers, and firewalls 
+
+                What are the benefits of cloud computing and virtual networking?
+                      Reliability: more available to more people across the globe with minimal interruption
+                      Cost: costs less than having to buy all the hardware to build data centers
+                      Scalability: can easily add or remove features as needed extremely quickly and easily
+
         <b>11) Functions of Network Tools</b>
            
     </pre>
 <h2>03.03 Network Communication</h2>
     <pre>
         <b>01) Introduction to Network Communication</b>
-    
+                  Communication - sending data packets from one point to another
+                  Data Packets - have information about sender, receiver, and content of message
+                   Header - contains IP address and MAC address of destination device, also contains "Protocol Number" that tells receiving device what to do with the information
+                   Body - contains data that needs to be transmitted during communication
+                   Footer - tells the receiving device that the communication is complete
+                
+                Network Performance is measured by 'Bandwidth'
+                 Bandwidth = amount of data a device receives every second 
+                
+                Packet Sniffing - practice of capturing and inspecting data packets sent across the network
+
         <b>02) TCP/IP Model</b>
-    
+                Transmission Control Protocol - internet communication protocol that allows 2 devices to connect and stream data 
+                Internet Protocol - set of standards used for routing and addressing data packets as they travel between devices on the internet
+                Port - software-based location that organizes the sending and receiving of data between devices on a network
+                    Port 25 - email communication
+                    Port 443 - Secure Internet communication (HTTPS)
+                    Port 20 - Large File Transfers
+                
         <b>03) 4 layers of TCP/IP</b>
+                TCP/IP model is a framework used to visualize how data is organized and transmitted across the network
+                   1. Network Access Layer - deals with the creation of data packets and their transmission across the network
+                            - includes hardware devices                   
+                   2. Internet Layer - where IP address is attactched to indicate location of sender and receiver. 
+                            - focus on how networks communicate - handles LAN communication or sending out to WAN
+                   3. Transport Layer - controls flow of traffic across the network. permit or deny communications with other devices and includes connection status information
+                            - error control / handling
+                   4. Application Layer - protocols determine how data packets will interact with the receiving device
+                            - functions organized at application layer include file transfers and email services
         
         <b>04) Learn More about TCP/IP</b>
+                1 - Network Access Layer = Ethernet vs Wireless (and more)
+                2 - Internet Layer = IP (v4, v6)
+                3 - Transport Layer = TCP v UDP (and more)
+                4 - Application Layer = HTTP, TLS, DNS, etc... 
 
-        <b>05) the OSI Model</b>
+                Network Access Layer (aka Data Link Layer) - hubs, modems, cables and wiring are part of this layer
+                        - ARP (Address Resolution Protocol) is part of the Network Access Layer
+                           ARP assists IP with directing data packets on the same physical network by mapping IP addresses to MAC addresses.
+                Internet Layer (aka Network Layer) - responsible for ensuirng delivery to destination. 
+                        - IP (Internet Protocol) - sends data packets to the correct destination. IP packets allow communication between two networks
+                        - ICMP (Internet Control Message Protocol) - shares information and status updates of data packets. useful for detecting and troubleshooting network errors.
+                                ICMP reports information about packets that were dropped 
+                Transport Layer - responsible for transmitting data to destination.
+                        - Transmission Control Protocol (TCP) - ensures data is reliably transmitted to the destination
+                        - User Datagram Protocol (UDP) - not concerned with reliability of transmission - performance sensitive applications like video streaming
+                Application Layer - similar to Application, Presentation, and Session layers of OSI model. responsible for making network requests and responding to requests. 
+                    defines which internet services and applications users can access. 
+                         - Hypertext Transfer Protocol (HTTP) 
+                         - Simple Mail Transfer Protocol (SMTP)
+                         - Secure Shell (SSH)
+                         - File Transfer Protocol (FTP)
+                         - Domain Name System (DNS)
+                TCP/IP combines multiple OSI model layers into each layer (TCP/IP has 4 layers, OSI has 7 Layers)                               
+
+        <b>05) the OSI (Open Systems Interconnection) Model</b>
+                the TCP/IP model is a framework used to visualize how data is organized and transmitted across networks.
+
+            the OSI model is a standerdized concept that describes the 7 layers computers use to communicate and send data over the network
+                1. Physical Layer - corresponds to physical hardware. Hubs, Modems, Cables and Wiring 
+                2. Data Link Layer - sending and receiving data packets within a single network - Switches and NIC (Network Interface Cards) on LANs
+                3. Network Layer - oversees receiving frames from data link (layer 2) and deliving to intended destination
+                        ex: Data Packets allow communication between 2 networks.
+                4. Transport Layer - responsible for delivering data between devices. handles data transfer, flow and breaking data down to smaller data packets
+                        ex: TCP and UPD are transport layer protocols
+                5. Session Layer - describes when connection is established between 2 devices.  
+                        ex: authentication, reconnection, setting checkpoints of data transfer
+                6. Presentation Layer - Data translation and encryption for the network, processes at the presentation layer require a standardized format.
+                        ex: encryption, compression, etc... take place. 1 example of encryption takes place at this layer is SSL to encrypt data for HTTPS
+                7. Application Layer - processes directly involving everyday users; <i>'user connection to the network via applications and request'</i>
+                        ex: browsers utilize HTTP / HTTPS and also DNS to translate web domain names to IP addresses; email uses SMTP (Simple Mail Transfer Protocol) to send and receive email
     </pre>
 <h2>03.04 Local and Wide Network Communication</h2>
     <pre>
         <b>01) IP Addresses and Network Communication</b>
+                
     
         <b>02) Components for Network Layer Communications</b>
     	
