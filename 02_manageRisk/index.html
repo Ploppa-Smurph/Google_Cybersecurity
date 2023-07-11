@@ -407,12 +407,55 @@
                 <a href="https://suricata.io/">Suricata - Open Source Network Analysis and Threat Detection</a>
 
     <b>03) Myths about the Security Field</b>
+                need to be able to code and hack
+                  -- you DO need to build relationships
+                    
     <b>04) Use SIEM Tools to Protect Organizations</b>
+                Splunk Enterprise & Cloud: used to collect, search, monitor, and analyze log data from multiple sources to obtain full visibility
+                   Splunk dashboards:
+                       - Security Posture Dashboard: designed for SOCs (Security Operations Centers) - displays last 24 hours of notable security-related events.
+                               analysts use this dashboard to monitor and investigate threats in real time
+                       - Executive Summary Dashboard: analyzes and monitors health of organization over time.
+                               analysts use this dashboard to provide high-level insights to stakeholders - generate summary of incidents and trends over time
+                       - Incident Review Dashboard: identify suspicious patterns that occur in event of an incident.                      
+                               analysts use this to provide a visual timeline of events leading up to an incident 
+                       - Risk Analysis Dashboard: helps identify risk for each risk object. shows changes in risk-related behavior loggin in outside normal hours or location, unusually high network traffic from a specific computer.         
+                               analysts use to analyze potential impact of vulnerabilities in critical assets (to prioritize risk mitigation efforts) 
+                
+                Chronicle: cloud-native, collect log data from: specific asset, domain name, user, or IP address
+                    Chronicle Dashboards:
+                        - Enterprise Insight Dashboard: highlights recent risk alerts; suspicious domain names in logs (IOC = Indicators of Compromise)
+                                analysts use to monitor login or data access attemps related to critical assets
+                        - Data Ingestion and Health Dashboard: shows event logs, log sources, success rates of data processed into Chronicle
+                                analysts use to ensure log sources are correctly configured and that logs are received without error
+                        - IOC Matches Dashboard: indicates top risks & vulnerabilitie to the organization. used to observe and identify trends        
+                                analysts use to focus priority on highest threats
+                        - Main Dashboard: displays high-level summary of information related to data ingestion, alerting, and event activity over time.
+                                analysts use to access a timeline of events (ie: spike in failed login attempts)
+                        - Rule Detections Dashboard: provides statistics related to incidents with highest occurences, severities, and detections over time
+                                analysts use to help manage recurring incidents and establish mitigation tactics to reduce an organization's level of risk
+                        - User Sign In Overview Dashboard: provides information about user access behavior
+                                analysts use to identify unusual login times or multiple location logins                
 </pre>
 <h2>02.12 Review: Introduction to Cybersecurity Tools</h2>
 <pre>
     <b>01) Wrap-up</b>
+            Logs are important 
+               - firewall, network, and server logs  
+            SIEM Tools and Dashboards
+
     <b>02) Glossary wk 03</b>
+                Chronicle: A cloud-native tool designed to retain, analyze, and search data
+                Incident response: An organization’s quick attempt to identify an attack, contain the damage, and correct the effects of a security breach
+                Log: A record of events that occur within an organization’s systems 
+                Metrics: Key technical attributes such as response time, availability, and failure rate, which are used to assess the performance of a software application
+                Operating system (OS): The interface between computer hardware and the user
+                Playbook: A manual that provides details about any operational action
+                Security information and event management (SIEM): An application that collects and analyzes log data to monitor critical activities in an organization
+                Security orchestration, automation, and response (SOAR): A collection of applications, tools, and workflows that use automation to respond to security events
+                Splunk Cloud: A cloud-hosted tool used to collect, search, and monitor log data
+                Splunk Enterprise: A self-hosted tool used to retain, analyze, and search an organization's log data to provide security information and alerts in real-time
+        
     <b>03) Quiz</b>
 </pre>
 <h2>02.13 </h2>
