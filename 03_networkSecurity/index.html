@@ -340,20 +340,42 @@
 <h2>0x.07 System Identification</h2>
     <pre>
         <b>01) Firewalls and Network Security Measures</b>
-                Stateless:
-                Stateful:
+                <i>Firewall is a network security device that monitors traffic to and from your network</i>
+                Port Filtering: blocking or allowing certain ports to limit unwanted communication
+                Stateful: keeps track of information passing through it and proactively filters threats
+                Stateless: operate on predefined rules, does not keep track of data packets 
 
-                Hardware: 
-                Software: 
-                Cloud: 
+                Hardware: most basic, a physical piece of hardware
+                Software: software used like a physical firewall, does require some processing power since it is software
+                Cloud: FaaS - Firewall as a Service - protects onsite computers and cloud held data 
 
+                NGFW (Next Gen Firewall): more secure that stateful, has deep packet inspection and Intrusion Detection 
                 Proxy server: 
 
         <b>02) Virtual Private Networks (VPNs)</b>
+                 changes Public IP address to hide location so as to keep data private when using a public network (ie: the internet)
+                <i>Encapsulation</i> - wrapping data packet inside other data packets to protect sensitive data
 
         <b>03) Security Zones</b>
+                segment of the network that protects the internal network from the internet
+                Network Segmentation: security technique that divides network into segments each with their own access permissions and security rules
+                  ex: guest wi-fi at coffee shop or hotel, there is a seperate password protected connection for business operations 
+                Subnets - maintains privacy for different departments in a domain  
+
+                Uncontolled Security Zone: all networks outside of an organization's control
+                Controlled Security Zone: area to protect the internal network
+                   DMZ (Demilitarized Zone): Contains Web-servers, Proxy servers, DNS servers, E-mail, File Servers for external communication
+                   Internal Network: Private data the organization needs to protect
+                   Restricted Zone: only accessible to certain employees in the internal network, more secure
+                should have DMZ between 2 firewalls - 1st filters traffic outside DMZ, 2nd filters traffic moving into internal network 
+                    there would be an additional firewall between the internal network and restricted zone
 
         <b>04) Subnetting and CIDR</b>
+                Subnetting = creates smaller networks inside a network. can be used to create security zones.  
+                CIDR (Classless Inter-Domain Routing) notation for Subnetting 
+                  ex: 198.51.100.0/24 will encompass all IP addresses 198.51.100.0 - 198.51.100.255
+
+              <a href="https://www.ipaddressguide.com/cidr">CIDR to IPv4 conversion tool</a>    
 
         <b>05) Proxy Servers</b>
 
