@@ -178,32 +178,181 @@
 <h2>03.04 Local and Wide Network Communication</h2>
     <pre>
         <b>01) IP Addresses and Network Communication</b>
-                
-    
+               unique sting of characters that identifies a device on the network 
+             IPv4 = 192.10.0.15 - 4 sets = total of 4 bytes of address info
+             IPv6 = 684D:1111:222:3333:4444:5555:6:77 - 32 characters = total of 16 bytes of address info
+
+             Public address = assigned by ISP, outward facing IP address
+             Private address = only seen by devices on the same local network
+
+             MAC address = alphanumeric identifier assigned to each physical device. 
+                    switches map MAC address to devices on network and creates MAC Address Table
+                    
         <b>02) Components for Network Layer Communications</b>
-    	
+                IPv6 data packet header is simpler than IPv4 
+                    13 parts of IPv4 header:
+                        Version: The first 4-bit header tells receiving devices what protocol the packet is using. The packet used in the illustration above is an IPv4 packet.
+                        IP Header Length (HLEN): HLEN is the packet’s header length. This value indicates where the packet header ends and the data segment begins. 
+                        Type of Service (ToS): Routers prioritize packets for delivery to maintain quality of service on the network. The ToS field provides the router with this information.
+                        Total Length: This field communicates the total length of the entire IP packet, including the header and data. The maximum size of an IPv4 packet is 65,535 bytes.
+                        Identification: For IPv4 packets that are larger than 65, 535 bytes, the packets are divided, or fragmented, into smaller IP packets. The identification field provides a unique identifier for all the fragments of the original IP packet so that they can be reassembled once they reach their destination.                     
+                        Flags: This field provides the routing device with more information about whether the original packet has been fragmented and if there are more fragments in transit.
+                        Fragmentation Offset: The fragment offset field tells routing devices where in the original packet the fragment belongs.
+                        Time to Live (TTL): TTL prevents data packets from being forwarded by routers indefinitely. It contains a counter that is set by the source. The counter is decremented by one as it passes through each router along its path. When the TTL counter reaches zero, the router currently holding the packet will discard the packet and return an ICMP Time Exceeded error message to the sender. 
+                        Protocol: The protocol field tells the receiving device which protocol will be used for the data portion of the packet.
+                        Header Checksum: The header checksum field contains a checksum that can be used to detect corruption of the IP header in transit. Corrupted packets are discarded.
+                        Source IP Address: The source IP address is the IPv4 address of the sending device.
+                        Destination IP Address: The destination IP address is the IPv4 address of the destination device.
+                        Options: The options field allows for security options to be applied to the packet if the HLEN value is greater than five. The field communicates these options to the routing devices. 
     </pre>
 <h2>03.05 Review: Network Architecture</h2>
     <pre>
         <b>01) Wrap-up</b>
+                Structure of Network - LAN and WAN
+                Standard Networking Tools - Hubs, Routers, Switches
+                Cloud Networking -
+                TCP/IP model -
+                OSI model - 
+
         <b>02) Glossary 03.01</b>
+            Bandwidth: The maximum data transmission capacity over a network, measured by bits per second
+            Cloud computing: The practice of using remote servers, application, and network services that are hosted on the internet instead of on local physical devices
+            Cloud network: A collection of servers or computers that stores resources and data in remote data centers that can be accessed via the internet
+            Data packet: A basic unit of information that travels from one device to another within a network
+            Hub: A network device that broadcasts information to every device on the network
+            Internet Protocol (IP): A set of standards used for routing and addressing data packets as they travel between devices on a network
+            Internet Protocol (IP) address: A unique string of characters that identifies the location of a device on the internet
+            Local Area Network (LAN): A network that spans small areas like an office building, a school, or a home
+            Media Access Control (MAC) address: A unique alphanumeric identifier that is assigned to each physical device on a network
+            Modem: A device that connects your router to the internet and brings internet access to the LAN
+            Network: A group of connected devices
+            Open systems interconnection (OSI) model: A standardized concept that describes the seven layers computers use to communicate and send data over the network
+            Packet sniffing: The practice of capturing and inspecting data packets across a network
+            Port: A software-based location that organizes the sending and receiving of data between devices on a network
+            Router: A network device that connects multiple networks together
+            Speed: The rate at which a device sends and receives data, measured by bits per second
+            Switch: A device that makes connections between specific devices on a network by sending and receiving data between them
+            TCP/IP model: A framework used to visualize how data is organized and transmitted across a network
+            Transmission Control Protocol (TCP): An internet communication protocol that allows two devices to form a connection and stream data
+            User Datagram Protocol (UDP): A connectionless protocol that does not establish a connection between devices before transmissions
+            Wide Area Network (WAN): A network that spans a large geographic area like a city, state, or country
+            
         <b>03) Quiz</b>
     </pre>
-<h2>03.06 </h2>
+<h2>03.06 Introduction to Network Protocols</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Welcome to wk 02</b>
+                -Network Protocols
+                -VPNs (Virtual Private Network)
+                -Firewalls, Security Zones, and Proxy Servers
+
+        <b>02) Network Protocols</b>
+                <i>Network Protocols are a set of rules used by 2 or more devices on a network to describe the order of delivery and structure of data</i>   
+                ex: a) when accessing a website, your device first uses TCP to establish a connection to the web server.
+                     -TCP allows 2 devices to connect and stream data, TCP also verifies both devices (handshake)
+                    b) the connection is established after the web server responds and sends data packets. the ARP (Address Resolution Protocol) helps get the data to the correct MAC address
+                    c) now we can access the website, HTTPS allows webbrowsers to more securely send and receive data across the internet
+                      -HTTPS uses SSL/TLS for a Secure Socket Layer and Transport Layer Security to encrypt data and send securely across the internet
+                    d) DNS or Domain Name Server translates the IP address to a web address
+
+        <b>03) Common Network Protocols</b>
+                <b>Communication Protocols</b>
+                    - TCP (Transmission Control Protocol): allows 2 devices to connect. (happens at Transport Layer of TCP/IP model)
+                        3 way handshake = device sends SYN request -> server responds with SYN/ACK to acknowledge -> then TCP connection is established 
+                    - UDP (User Datagram Protocol): connectionless protocol, less reliable than TCP. UPD happens at Transport Layer
+                    - HTTP (Hypertext Transfer Protocol): Application Layer Protocol - uses Port 80. communicate between browser and server
+                    - DNS (Domain Name Server): translates IP address into domain name. DNS occurs at Application layer -- uses UDP & port 53 (default)
+                <b>Management Protocols</b>
+                    - SNMP (Simple Network Management Protocol): monitor and manage devices on internet - SNMP occurs at Application Layer
+                    - ICMP (Internet Control Message Protocol): used to troubleshoot network connectivity isses, ICMP occurs at Internet Layer
+                <b>Security Protocols</b>
+                    - HTTPS (Hypertext Protocol Secure): Port 443; Application Layer.
+                    - SFTP (Secure File Transfer Protocol): TCP port 22 (SSH); SFTP uses AES (Advanced Encryption Standar). SFTP occurs at Application Layer 
+
+        <b>04) Additional Network Protocols</b>
+                IANA (Internet Assigned Numbers Authority):
+                    Private IP Ranges:
+                       10.0.0.0 - 10.255.255.255
+                       172.16.0.0 - 172.31.255.255
+                       192.168.0.0 - 192.168.255.255
+                    Public IP Ranges:
+                        1.0.0.0 - 9.255.255.255
+                        11.0.0.0 - 126.255.255.255
+                        128.0.0.0 - 172.15.255.255
+                        172.32.0.0 - 192.167.255.255
+                        192.169.0.0 - 233.255.255.255  
+                
+                Network Address Translation (NAT): part of both Layer 2 (Internet Layer) and Layer 3 (Transport Layer) of TCP/IP model
+                DHCP (Dynamic Host Configuration Protocol): Management protocol, Application Layer - assigns unique IP address, configures DNS and default gateway for devices 
+                 - DHCP Servers operate on Port 67
+                 - DHCP Clients operate on Port 68
+                ARP (Address Resolution Protocol): Layer 2, Internet Layer - translate IP address in data packets to MAC address of device
+                Telnet - Application Layer - allows devices to communicate, TCP Port 23 - not as secure as SSH
+                SSH (Secure Shell) - Application Layer, Port 22. secure authentication and encryption
+                POP (Post Office Protocol ) - Application Layer (4), manage and retrieve email from servers - does not sync
+                   TCP/UDP Port 110 = unencrypted
+                   TCP/UDP Port 995 = encrypted with SSL/TLS 
+                IMAP (Internet Message Protocol): downloads headers, but not content
+                    TCP Port 143 = unencrypted
+                    TCP Port 993 = encrypted
+                SMTP (Simple Mail Transfer Protocol): used to transmit & route email from sender to recipient's address, uses MTA (Message Transfer Agent)
+                    TCP Port 25 = unencrypted
+                    TCP Port 587 = encrypted with TLS
+                    
+                    
+                    DHCP = UDP port 67 (servers)
+                           UDP port 68 (clients)
+                    
+                    ARP = none
+                    
+                    Telnet = TCP port 23
+                    
+                    SSH = TCP port 22
+                    
+                    POP3 = TCP/UDP port 110 (unencrypted)
+                           TCP/UDP port 995 (encrypted, SSL/TLS)
+                    
+                    IMAP = TCP port 143 (unencrypted)
+                           TCP port 993 (encrypted, SSL/TLS)
+                    
+                    SMTP = TCP/UDP port 587 (encrypted, TLS)          
+
+        <b>05) Working in Network Security</b>
+                  problem solving 
+                 follow standards -- concentrate on unsolved challenges and use other's expertise on challenges that have been solved           
+
+        <b>06) Wireless Protocols</b>
+                 IEEE 802.11 (Wi-Fi) standards
+                    WPA, WPA2, WPA3 -- security measures in wi-fi
+
+        <b>07) Evolution of Wireless Protocols</b>
+                 Institute of Electrical and Electronics Engineers
+               802.11 deal with Wi-Fi specifly 
+               
+               WEP (Wireless Equivalent Privacy) - old - change it!!
+               WPA (Wi-Fi Protected Access) - imprves on WEP. uses TKIP (Temporal Key Integrity Protocol)
+                        threat actors can use KRACK attack (Keygen Reinstallation Attack) to decrypt transmissions - set new key to all 0s and the transmission is as-if unencrypted
+               WPA2 (Wi-Fi Protected Access 2.0) - uses Advanced Encryption Standard (AES) and TKIP - uses CCMP, still vulnerable to KRACK attack
+                    Personal - easy to implement
+                    Enterprise - more complicated setup with higher security for wireless transmission
+               WPA3 (Wi-Fi Protected Access 3.0) - address KRACK vulnerabilty, SAE (Simultaneous Authentication of Equals), offers 128-bit encryption & 192-bit encryption for enterprise  
     </pre>
-<h2>0x.07 </h2>
+<h2>0x.07 System Identification</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Firewalls and Network Security Measures</b>
+                
+        <b>02) Virtual Private Networks (VPNs)</b>
+
+        <b>03) Security Zones</b>
+
+        <b>04) Subnetting and CIDR</b>
+
+        <b>05) Proxy Servers</b>
+
+        <b>06) Virtual Networks</b>
+
     </pre>
-<h2>0x.08 </h2>
+<h2>0x.08 Review: Network Operations</h2>
     <pre>
         <b>01) </b>
         <b>02) </b>
