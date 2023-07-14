@@ -476,51 +476,155 @@
              - Ping of Death attack - sends oversized ICMP packet larger than 64KB
 
         <b>02) Reading 'tcpdump logs'</b>
-        
+                Packet Sniffers (Packet Analyzer) = tool that captures and analyzes data traffic inside a network - investigate suspicious activity
+                  common Network Protcol Analyzers: \
+                     - SolarWinds NetFlow Traffic Analyzer
+                     - ManageEngine OpManager
+                     - Azure Network Watcher
+                     - Wireshark
+                     - tcpdump -- this course will use tcpdump
+                
+                tcpdump - command line network analyzer. popular and lightweight
+                  provides brief packet analysis and formats it to be easily read by humans. 
+                    displays Source IP address, Destination IP address, as well as port #s used in communication     
 
-        <b>03) Activity: Analayze Network Layer Communication</b>
+               Information Contained in 'tcpdump' packet capture:
+                - Timestamp: begins with timestamp formatted as HH:MM:SS.SSSS 
+                - Source IP: packet's origin IP
+                - Source Port: port where packet originated
+                - Destination IP: address where packet is being transmitted
+                - Destination Port: port # being transmitted to  
+                
+            Used to capture and view network communications and collect statistics
+             - used to establish a baseline for network traffic patterns and utilization metrics
+             - detect and identify malicious traffic
+             - create customized alerts to send notifications when network security threats arrive 
+             - locate unauthorized messaging, traffic, or wireless access points
+
+        <b>03) Activity: Analayze Network Layer Communication</b> 
+        Review the scenario below. Then complete the step-by-step instructions.
+            You are a cybersecurity analyst working at a company that specializes in providing IT consultant services. Several customers contacted your company to report that they were not able to access the company website www.yummyrecipesforme.com, and saw the error “destination port unreachable” after waiting for the page to load. 
+              You are tasked with analyzing the situation and determining which network protocol was affected during this incident. To start, you visit the website and you also receive the error “destination port unreachable.” Next, you load your network analyzer tool, tcpdump, and load the webpage again. This time, you receive a lot of packets in your network analyzer. The analyzer shows that when you send UDP packets and receive an ICMP response returned to your host, the results contain an error message: “udp port 53 unreachable.” 
+        
+        In the DNS and ICMP log, you find the following information:
+        
+            1) In the first two lines of the log file, you see the initial outgoing request from your computer to the DNS server requesting the IP address of yummyrecipesforme.com. This request is sent in a UDP packet.
+        
+            2) Next you find timestamps that indicate when the event happened. In the log, this is the first sequence of numbers displayed. For example: 13:24:32.192571. This displays the time 1:24 p.m., 32.192571 seconds.
+        
+            3) The source and destination IP address is next. In the error log, this information is displayed as: 192.51.100.15.52444 > 203.0.113.2.domain. The IP address to the left of the greater than (>) symbol is the source address. In this example, the source is your computer’s IP address. The IP address to the right of the greater than (>) symbol is the destination IP address. In this case, it is the IP address for the DNS server: 203.0.113.2.domain
+        
+            4) The second and third lines of the log show the response to your initial ICMP request packet. In this case, the ICMP 203.0.113.2 line is the start of the error message indicating that the ICMP packet was undeliverable to the port of the DNS server.
+        
+            5) Next are the protocol and port number, which displays which protocol was used to handle communications and which port it was delivered to. In the error log, this appears as: udp port 53 unreachable. This means that the UDP protocol was used to request a domain name resolution using the address of the DNS server over port 53. Port 53, which aligns to the .domain extension in 203.0.113.2.domain, is a well-known port for DNS service. The word “unreachable” in the message indicates the message did not go through to the DNS server. Your browser was not able to obtain the IP address for yummyrecipesforme.com, which it needs to access the website because no service was listening on the receiving DNS port as indicated by the ICMP error message “udp port 53 unreachable.”
+        
+            6) The remaining lines in the log indicate that ICMP packets were sent two more times, but the same delivery error was received both times. 
+        
+        Now that you have captured data packets using a network analyzer tool, it is your job to identify which network protocol and service were impacted by this incident. Then, you will need to write a follow-up report. 
+        
+        As an analyst, you can inspect network traffic and network data to determine what is causing network-related issues during cybersecurity incidents. Later in this course, you will demonstrate how to manage and resolve incidents. For now, you only need to analyze the situation. 
+        
+        This incident, in the meantime, is being handled by security engineers after you and other analysts have reported the issue to your direct supervisor. 
 
         <b>04) Activity: Exemplar Analyze Network Layer Communication</b>
 
         <b>05) Real-life DDoS Attack</b>
+                in 2016 there was a huge DDoS attack on DNS provider
+             some university students created a botnet. botnet = collection of infected computers controlled by 'bot-herder'   
 
+             at 7am the day of the attack the botnet sent millions of DNS request to the service provider
     </pre>
 <h2>03.11 Network Attack Tactics and Defense</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Malicious Packet Sniffing</b>
+                using software tools to observe data as it moves across a network
+              Passive Packet Sniffing: data packets are read in transit
+              Active Packet Sniffing: data packets are manipulated in transit  
+
+              using a VPN can protect against malicious packet sniffing
+              use HTTPS web addresses (with SSL/TLS encrytpion)
+              avoid using unprotected wi-fi
+
+        <b>02) IP Spoofing</b>
+              attacker changes the source IP of a data packet to impersonate an authorized system and gain access
+                ex: on-path attack - attacker places themselves in middle of authorized connection and intercepts or alters data in transit
+                    replay attack - intercepts a data packet in transit and delays it or repeats it, at another time 
+                    smurf attack - DDoS + IP Spoofing attack - sniffs user IP address and floods it with packets
+
+               to prevent - encrypt data sent across network
+                          - configure firewall so that it rejects traffic coming from outside the network that has the same IP address of the local network
+
+        <b>03) Overview of Intercerption Tactics</b>
+                NIC (Network Interface Card) 
+
+        <b>04) Activity: Analyze Network Attack</b>
+        
+        <b>05) Exemplar: Analyze Network Attack</b>
+
+        <b>06) Identify: Network Attacks</b>
+
     </pre>
 <h2>03.12 Review: Secure Against Network Intrusion</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Wrap-up</b>
+               - Network attack
+               - Sniffing
+               - DoS, DDoS, Meddler-in-the-middle (on-path)
+
+        <b>02) Glossary 03.03</b>
+            Active packet sniffing: A type of attack where data packets are manipulated in transit
+            Botnet: A collection of computers infected by malware that are under the control of a single threat actor, known as the “bot-herder"
+            Denial of service (DoS) attack: An attack that targets a network or server and floods it with network traffic
+            Distributed denial of service (DDoS) attack: A type of denial of service attack that uses multiple devices or servers located in different locations to flood the target network with unwanted traffic
+            Internet Control Message Protocol (ICMP): An internet protocol used by devices to tell each other about data transmission errors across the network
+            Internet Control Message Protocol (ICMP) flood: A type of DoS attack performed by an attacker repeatedly sending ICMP request packets to a network server
+            IP spoofing: A network attack performed when an attacker changes the source IP of a data packet to impersonate an authorized system and gain access to a network
+            Network Interface Card (NIC): Hardware that connects computers to a network
+            On-path attack: An attack where a malicious actor places themselves in the middle of an authorized connection and intercepts or alters the data in transit
+            Packet sniffing: The practice of capturing and inspecting data packets across a network 
+            Passive packet sniffing: A type of attack where a malicious actor connects to a network hub and looks at all traffic on the network
+            Ping of death: A type of DoS attack caused when a hacker pings a system by sending it an oversized ICMP packet that is bigger than 64KB
+            Replay attack: A network attack performed when a malicious actor intercepts a data packet in transit and delays it or repeats it at another time
+            Smurf attack: A network attack performed when an attacker sniffs an authorized user’s IP address and floods it with ICMP packets
+            Synchronize (SYN) flood attack: A type of DoS attack that simulates a TCP/IP connection and floods a server with SYN packets
+
+        <b>03) Quiz</b>
     </pre>
-<h2>0x.13 </h2>
+<h2>03.13 Introduction to Security Hardening</h2>
+    <pre>
+        <b>01) Welcome to wk 04</b>
+                
+        <b>02) Security Hardening</b>
+    </pre>
+<h2>03.14 OS Hardening</h2>
     <pre>
         <b>01) </b>
         <b>02) </b>
         <b>03) </b>
         <b>04) </b>
     </pre>
-<h2>0x.14 </h2>
+<h2>03.15 Network Hardening</h2>
     <pre>
         <b>01) </b>
         <b>02) </b>
         <b>03) </b>
         <b>04) </b>
     </pre>
-<h2>0x.15 </h2>
+<h2>03.16 Cloud Hardening</h2>
     <pre>
         <b>01) </b>
         <b>02) </b>
         <b>03) </b>
         <b>04) </b>
-    </pre>
-<h2>0x.16 </h2>
+    </pre> 
+<h2>03.17 Review: Security Hardening</h2>
+    <pre>
+        <b>01) </b>
+        <b>02) </b>
+        <b>03) </b>
+        <b>04) </b>
+    </pre> 
+<h2>03.18 Congratulations on Completing course 03</h2>
     <pre>
         <b>01) </b>
         <b>02) </b>
