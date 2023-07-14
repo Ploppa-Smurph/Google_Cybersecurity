@@ -593,36 +593,157 @@
 <h2>03.13 Introduction to Security Hardening</h2>
     <pre>
         <b>01) Welcome to wk 04</b>
-                
+                harden on devices
+                          networks 
+                          applications
+                          Cloud infrastructure
+
+            patch and backup the system             
+
         <b>02) Security Hardening</b>
+                Security Hardening: process of strengthening a system to reduce vulnerability and attack surface
+                    Attack Surface: all potential vulnerabilities used to attack the system
+                 
+                 regular maintenance helps keep the system running optimally, software updates, device and software configuration changes    
+                
+                 hardening is conducted on - Hardware, Operating Systems, Applications, Computer Networks, Databases
+
+                 physical security (gates, security guards, swipe badges) are all part of physical security hardening
+
+                - keeping data encrypted
+                - removing unused data and applications
+                - disabling unused ports
+                - limiting access and permissions
+
+                hardening helps system run more efficiently and reduces the overall attack surface 
+
+                conduct regular penetration testing a pen test is a simulated attack that helps identify in a system, network, website, application, or process
+                  pen testers document findings in a report - security teams then determine the type of vulnerabilities and come up with a plan to fix them
     </pre>
 <h2>03.14 OS Hardening</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) OS hardening Practices</b>
+         OS = interface between user and hardware of computer system
+
+         update the system, backup the system regularly, keep up to date list of users and devices
+          - ensure encryption is enabled for the system (only have to do that once)
+
+         Patch update = software update that addresses security and vulnerability issues within the program  
+
+         Baseline Configuration (Baseline Image): documented set of specifications within a system that is used as basis of future builds, releases, and updates
+
+         set strong password, password length, password expiration
+
+         MFA (Multi-factor Authentication): something you know (password), something you have (physical card or key), something unique about you (biometric)
+           
+        <b>02) Brute Force Attacks and OS</b>
+                Brute Force Attack = trial-and-error process of discovering private information.
+                    Simple Brute Force attack: threat actor try to guess login credentials -- like they do in the movies where they enter usernames and passwords to unlock a computer 
+
+                    Dictionary Attack = use list of commonly used paswords and stolen credentials from previous breaches to access the system
+
+                 brute force attacks can be tedious and time consuming
+            VMs (Virtual Machines) = software versions of physical computers. additional layer of security fo an organization because they can run code in an isolated environment. VMs are easily deleted and reinstalled with clean images or checkpoints
+                 there are risks that a malicious risk on a VM can escape and access the host machine
+                 
+            Sandbox = testing environment that allows you to execute software or programs seperatly from your network
+            
+        Brute Force Prevention:
+            Salting & hasingh - hashing converts info into unique value that can be used to determine its integrity - 1 way function. Salting adds random characters to the hashed password
+            MFA (Multi-Factor Authentication) or 2FA (2 factor auth) - requires user to verify identity in 2 or more ways; 2FA requires only 2 ways
+            CAPTCHA & reCAPTCHA (Completely Automated Public Turing Test to Tell Computers and Humans Apart) - helps prevent software from brute force. reCAPTCHA is a free service from google
+            Password Policies - Standardize good password practices - how complex password should be, how often the password is updated, limits to login attemts, etc... 
+
+        <b>03) Activity: Apply OS Hardening Techniques</b>
+        You are a cybersecurity analyst for yummyrecipesforme.com, a website that sells recipes and cookbooks. A disgruntled baker has decided to publish the website’s best-selling recipes for the public to access for free. 
+
+        The baker executed a brute force attack to gain access to the web host. They repeatedly entered several known default passwords for the administrative account until they correctly guessed the right one. After they obtained the login credentials, they were able to access the admin panel and change the website’s source code. They embedded a javascript function in the source code that prompted visitors to download and run a file upon visiting the website. After running the downloaded file, the customers are redirected to a fake version of the website where the seller’s recipes are now available for free.
+        
+        Several hours after the attack, multiple customers emailed yummyrecipesforme’s helpdesk. They complained that the company’s website had prompted them to download a file to update their browsers. The customers claimed that, after running the file, the address of the website changed and their personal computers began running more slowly. 
+        
+        In response to this incident, the website owner tries to log in to the admin panel but is unable to, so they reach out to the website hosting provider. You and other cybersecurity analysts are tasked with investigating this security event.
+        
+        To address the incident, you create a sandbox environment to observe the suspicious website behavior. You run the network protocol analyzer tcpdump, then type in the URL for the website, yummyrecipesforme.com. As soon as the website loads, you are prompted to download an executable file to update your browser. You accept the download and allow the file to run. You then observe that your browser redirects you to a different URL, greatrecipesforme.com, which is designed to look like the original site. However, the recipes your company sells are now posted for free on the new website.  
+        
+        The logs show the following process:
+           1. The browser requests a DNS resolution of the yummyrecipesforme.com URL.
+           2. The DNS replies with the correct IP address. 
+           3. The browser initiates an HTTP request for the webpage.
+           4. The browser initiates the download of the malware.
+           5. The browser requests another DNS resolution for greatrecipesforme.com.
+           6. The DNS server responds with the new IP address.
+           7. The browser initiates an HTTP request to the new IP address.
+        
+        A senior analyst confirms that the website was compromised. The analyst checks the source code for the website. They notice that javascript code had been added to prompt website visitors to download an executable file. Analysis of the downloaded file found a script that redirects the visitors’ browsers from yummyrecipesforme.com to greatrecipesforme.com. 
+        
+        The cybersecurity team reports that the web server was impacted by a brute force attack. The disgruntled baker was able to guess the password easily because the admin password was still set to the default password. Additionally, there were no controls in place to prevent a brute force attack. 
+        
+        Your job is to document the incident in detail, including identifying the network protocols used to establish the connection between the user and the website.  You should also recommend a security action to take to prevent brute force attacks in the future.
+
+
+        <b>04) Exemplar: Apply OS Hardening Techniques</b>
     </pre>
 <h2>03.15 Network Hardening</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Network Hardening Practices</b>
+            - Firewall Rules Maintenance    
+            - Network Log Analysis - analyzing network logs to identify events of interest
+            - Patch Updates
+            - Server Backups
+
+            SIEM tools are used in Network Log Analysis
+
+            1 time tasks: 
+            - Port Filtering - blocks or limits certain port numbers to limit unwanted communication
+            - Network Access Privilege 
+            - Encryption over Networks
+
+           Network Segmentation is part of network hardening  
+
+           encrypt data and restricted data should be encrypted to a higher standard
+
+        <b>02) Network Security Applications</b>
+                Firewall - allow or block traffic based on a set of rules -- inspects port information on data packet 
+                              OSI level 3 filters IP addresses
+                              OSI level 4 filters by Port number
+                              OSI level 7 filters by Protocols state 
+                IDS (Intrusion Detection System) - monitors system activity and alerts of possible intrusion - scan for known attacks and anomalies, placed behing the firewall, but before the LAN
+                IPS (Intrusion Prevention System) - proactively takes action to stop the intrusion, not simply report it; also sits behind firewall in Network architecture
+                SIEM (Security Information and Event Management) - software application 
+                          Chronicle & Splunk are 2 major SIEM, open-source S
+
+        <b>03) Activity: Analysis of Network Hardening</b>
+        You are a security analyst working for a social media organization. The organization recently experienced a major data breach, which compromised the safety of their customers’ personal information, such as names and addresses. Your organization wants to implement strong network hardening practices that can be performed consistently to prevent attacks and breaches in the future. 
+
+        After inspecting the organization’s network, you discover four major vulnerabilities. The four vulnerabilities are as follows:
+               1. The organization’s employees' share passwords.
+               2. The admin password for the database is set to the default.
+               3. The firewalls do not have rules in place to filter traffic coming in and out of the network.
+               4. Multifactor authentication (MFA) is not used. 
+        
+        If no action is taken to address these vulnerabilities, the organization is at risk of experiencing another data breach or other attacks in the future. 
+        
+        In this activity, you will write a security risk assessment to analyze the incident and explain what methods can be used to further secure the network.
+        <b>04) Exemplar: Analysis of Network Hardening</b> 
     </pre>
 <h2>03.16 Cloud Hardening</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Network Security in the Cloud</b>
+
+        <b>02) Cloud Security Explained</b>
+
+        <b>03) Secure the Cloud</b>
+
+        <b>04) Cryptography and Cloud Security</b>
+        
     </pre> 
 <h2>03.17 Review: Security Hardening</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Wrap-up</b>
+
+        <b>02) Glossary 03.04</b>
+
+        <b>03) Quiz</b>
     </pre> 
 <h2>03.18 Congratulations on Completing course 03</h2>
     <pre>
