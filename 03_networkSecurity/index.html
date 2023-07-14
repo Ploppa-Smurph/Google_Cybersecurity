@@ -756,21 +756,74 @@
 <h2>03.17 Review: Security Hardening</h2>
     <pre>
         <b>01) Wrap-up</b>
+                - OS Hardening 
+                - Network Hardening 
+                - Cloud Network Hardening 
 
         <b>02) Glossary 03.04</b>
+                Baseline configuration (baseline image): A documented set of specifications within a system that is used as a basis for future builds, releases, and updates
+                Hardware: The physical components of a computer
+                Multi-factor authentication (MFA): A security measure which requires a user to verify their identity in two or more ways to access a system or network
+                Network log analysis: The process of examining network logs to identify events of interest 
+                Operating system (OS): The interface between computer hardware and the user
+                Patch update: A software and operating system update that addresses security vulnerabilities within a program or product
+                Penetration testing (pen test): A simulated attack that helps identify vulnerabilities in systems, networks, websites, applications, and processes 
+                Principle of least privilege: Access and authorization to information only last long enough to complete a task
+                Security hardening: The process of strengthening a system to reduce its vulnerabilities and attack surface
+                Security information and event management (SIEM): An application that collects and analyzes log data to monitors critical activities for an organization
+                World-writable file: A file that can be altered by anyone in the world
 
         <b>03) Quiz</b>
 
         <b>04) Use NIST Cybersecurity Framework to Respond to a Security Incident</b>
+        You are a cybersecurity analyst working for a multimedia company that offers web design services, graphic design, and social media marketing solutions to small businesses. Your organization recently experienced a DDoS attack, which compromised the internal network for two hours until it was resolved.
+        
+        During the attack, your organization’s network services suddenly stopped responding due to an incoming flood of ICMP packets. Normal internal network traffic could not access any network resources. The incident management team responded by blocking incoming ICMP packets, stopping all non-critical network services offline, and restoring critical network services. 
+        
+        The company’s cybersecurity team then investigated the security event. They found that a malicious actor had sent a flood of ICMP pings into the company’s network through an unconfigured firewall. This vulnerability allowed the malicious attacker to overwhelm the company’s network through a distributed denial of service (DDoS) attack. 
+
+        To address this security event, the network security team implemented: 
+
+            - A new firewall rule to limit the rate of incoming ICMP packets
+            - Source IP address verification on the firewall to check for spoofed IP addresses on incoming ICMP packets
+            - Network monitoring software to detect abnormal traffic patterns
+            - An IDS/IPS system to filter out some ICMP traffic based on suspicious characteristics
+
+        As a cybersecurity analyst, you are tasked with using this security event to create a plan to improve your company’s network security, following the National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF). You will use the CSF to help you navigate through the different steps of analyzing this cybersecurity incident and integrate your analysis into a general security strategy:
+
+            1) Identify security risks through regular audits of internal networks, systems, devices, and access privileges to identify potential gaps in security. 
+
+            2) Protect internal assets through the implementation of policies, procedures, training and tools that help mitigate cybersecurity threats. 
+
+            3) Detect potential security incidents and improve monitoring capabilities to increase the speed and efficiency of detections. 
+
+            4) Respond to contain, neutralize, and analyze security incidents; implement improvements to the security process. 
+
+            5) Recover affected systems to normal operation and restore systems data and/or assets that have been affected by an incident. 
 
         <b>05) Portfolio Exemplar: Use NIST Cybersecurity Framework to Respond to a Security Incident</b>
     </pre> 
 <h2>03.18 Congratulations on Completing course 03</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Course Wrap-up</b>
+                Network and Network Architecture
+                - structure of a network
+                - Network Operations - protocols used for network communication
+                - Network Attacks - DoS, DDoS, IP Spoofing, Packet Sniffing
+                - Security Hardening - reduce the attack surface area of a network
+
+        <b>02) Glossary 03</b>
+        
+        <b>03) Course 03 Learning Journey</b>
+                <i>'I found the Networking session of this course informative, but also lacking in a detail of information. I feel the coursework breezed over the OSI and TCP/IP models much too quickly and only gave a very general amount of information on any of these items. By completing this section of the course I can describe what a Firewall is and how one is utilized in an organization's network architecture, but I have no experience configuring or using a firewall. 
+
+                    I found some of the Portfolio work a little difficult. I really did not know exactly the answers that I was searching for until after I saw the Exemplar and saw what was expected from me. I feel that perhaps the exemplar and explanation should be given first and then an additional, similar scenario could be given so that I had a better feel for how I should be approaching and wording the portfolio challenges. 
+                    
+                    I am looking forward to working with SIEM tools and packet sniffers such as WireShark, I have used them in a course in the past, but never really knew what we were doing. I hope to build a better foundational knowledge of the ports and protocols used in network communications so that I will have a more complete understanding of the events as they happen. '</i>
+
+        <b>04) Get Started on the Next Course</b>
+                    Course 04 - Tools of the Trade: Linux and SQL - explore foundational computing skill. 
+                      using Linux CLI and Querying databases with SQL
     </pre> 
 </body>
 </html>
