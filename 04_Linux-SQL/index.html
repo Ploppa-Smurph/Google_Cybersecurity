@@ -349,20 +349,69 @@
                    ** in Linux all commands and arguments ARE CASE SENSITIVE 
 
         <b>03) Core Commands for Navigating and Reading Files</b>
-                
+                FHS (Filesystem Hierarchy Standard) - component of the Linux OS that organizes data
+                    everything in Linux is considered a file  
+               - Root: highest-level directory in Linux
+                - subdirectories branch out from root directory, subdirectories can contain subdirectories    
+                   ex: '/home/analyst' = the first / is the root directory, which branches out to the 'home' directory which branches into the 'analyst' directory
+            - pwd - print working directory - prints working directory to screen   
+            - ls - displays names of files and directories in the current working directory
+            - cd - navigate between directories
+            - cat - displays contents of a file
+            - head - displays first 10 lines of a file, by default
+            - tail - displays last 10 lines of a file, by default
 
         <b>04) Navigate Linux and Read File Content</b>
-        
+                Root directory /, each additional seperated by '/'
+                 /home: each user on the system gets their own home directory 
+                 /bin: binary = contains binary executable files 
+                 /etc: directory stores system's configuration files 
+                 /tmp: store temporary files  **commonly used by attackers because anyone in the system can modify these files**
+                 /mnt: stands for mount and stores media such as USB drives and hard drives.
+
+              - man (manual) - read information about how to use commands
+
+            Absolute File Path: full file path, ex: '/home/analyst/projects'
+            Relative File Path: file path that starts from user's current directory
+            
+            pwd - current working directory (print working directory)
+            ls - list contents of current directory
+            cd - change directory
+            cat - display file contents
+            head - first 10 lines of a file
+            tail - last 10 lines of a file
+            less - returns content one page at a time
+               'less' controls
+                  space bar = forward 1 page
+                  b = move back 1 page
+                  down arrow = forward 1 line
+                  up arrow = move back 1 line
+                  q = quit 
+
         <b>05) Activity: Find Files with Linux Commands</b>
-        
+                      
         <b>06) Exemplar: Find Files with Linux Commands</b>
     </pre>
     <h2>04.11 Manage File Content with Bash</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Find What You Need with Linux</b>
+             
+        
+        <b>02) Filter Content in Linux</b>
+        
+        <b>03) Activity: Filter with grep</b>
+        
+        <b>04) Exemplar: Filter with grep</b>
+        
+        <b>05) Create and Modify Directories and Files</b>
+        
+        <b>06) Manage Directories and Files</b>
+        
+        <b>07) Identify: Key Linux Commands</b>
+        
+        <b>08: Activity: Manage Files with Linux Commands</b>
+        
+        <b>09: Exemplar: Manage Files with Linux Commands</b>
     </pre>
     <h2>04.12 Authenticate and Authorize Users</h2>
     <pre>
