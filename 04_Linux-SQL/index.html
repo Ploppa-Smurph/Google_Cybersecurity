@@ -395,9 +395,28 @@
     <h2>04.11 Manage File Content with Bash</h2>
     <pre>
         <b>01) Find What You Need with Linux</b>
-             
-        
+                filtering for information
+            - grep - searches specified file and returns any instance of specified string 
+                ex: $ grep OS updates.txt      -> will search the file updates.txt for the string 'OS' 
+                   the grep command takes 2 arguments: 1st what you are searching for; 2nd what file to search 
+            - | (piping) - used for a variety of purposes. used to join standard output of one command as standard input into another command for further processing
+                ex: $ ls /home/analyst/reports | grep users       -> will output the contents of directory /home/analyst/reports; then seach that output for any occurrence of the word 'users'
+
         <b>02) Filter Content in Linux</b>
+            - filtering: allows user to quickly filter files    
+            - grep: searches specified file and returns all lines containing specified string; 
+                       - commonly takes 2 arguements: 1) string & 2) file to search
+                       - ex: $ grep OS updates.txt   --> searches for the string 'OS' in the file updates.txt
+            - piping: | - takes the output of 1 command and inputs the output into the 2nd command
+                       - ex: ls /home/analyst/reports | grep users -> will output the contents of directory /home/analyst/reports and then search that directory output for the string 'users' 
+            - find: used to search directories and files for specified criteria 
+               can searc files and directories based on: specific string in name, certain file size, last modified within certain time frame
+                - -name: searches file and directory names for a specific string -- CASE SENSITIVE 
+                    ex: $ find /home/analyst/projects -name "*log*"
+                - -iname: same as -name, but NOT CASE SENSITIVE
+                - -mtime: search files and directories for anything modified within a certain time
+                    ex: $ find /home/analyst/projects -mtime -3      -> will return any files or directories changed within the last 3 days
+                - -mmin: same as mtime: but modified within minutes instead of days    
         
         <b>03) Activity: Filter with grep</b>
         
