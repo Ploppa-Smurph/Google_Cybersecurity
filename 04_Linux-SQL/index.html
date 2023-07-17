@@ -465,6 +465,7 @@
     <h2>04.12 Authenticate and Authorize Users</h2>
     <pre>
         <b>01) File Permissions and Ownership</b>
+            Permissions - type of access granted for a file or directory
             Authorization - granting specific access to specific resoureces in a system
                    allows you to limit access to files or directories 
             3 Linux Permissions:
@@ -472,24 +473,64 @@
                     - Write - allow content to be modified in a file, can create and modify files in a directory
                     - Execute - allow files to be executed (if executable), can enter into directories and alter files 
             3 Linux Owners:
-                    - Users - 
-                    - Group - 
-                    - Other -                
+                    - Users - the owner of the file
+                    - Group - consists of several users, 
+                    - Other - anyone else on the system that isn't the user or part of the group
 
+        File Permissions - ex: drwxrwxrwx  = a directory with full permissions for the user group 
+            first 'd' = directory
+              1st 'rwx' = read, write, execute -- permissions for the user
+              2nd 'rwx' = permissions for the 'group'
+              3rd 'rwx' = permissions for 'other'
+
+           Options: modify the behavior of the command
+
+           ls -la  = show permissions of all files (including hidden)
         
         <b>02) Change Permissions</b>
+               chmod = changes permissions of files and directories (change mode)
+                 ex: <i>chmod g+w, o-r access.txt</i>       - owner types seperated by comma
+                    this will add 'write' permission to 'group' 
+                          and remove the 'read' permission from 'other'
         
         <b>03) Permission Commands</b>
-        
+                read - file = read, directory = read contents for directory and file 
+                write - file = write to file, directory = write to files in the directory
+                execute - file = execute command files (executables), directory = enter directory and access files
+
+               1st letter / - = directory or file
+               2nd group of 3 letters = read, write, execute for 'user' == a hyphen = no permission
+               3rd group of 3 letters = read, write, execute for 'group'
+               4th group of 3 letters = ready, write, execute for 'other'
+               
+               ls -    = list
+               ls -a   = list with hidden files
+               ls -l   = list with permissions
+               ls -la  = list with permissions and hidden files
+               
+            principle of least privlege = limit access to files and directories, unless access is required   
+
+            chmod = change mode -- allows user to change permissions for files and directories in linux
+
+            ex: <i>chmod u+rwx, g+rwx, o-rwx login_session.txt</i>
+                  this would grant 'user' - read, write, execute file permission
+                       would grant 'group' - read, write, execute file permission
+                       and would remove 'other' -read, write, execute file permission
+
         <b>04) Activity: Manage Authorization</b>
         
         <b>05) Portfolio Activity: Use Linux Commands to Manage File Permissions</b>
-        
+            You are a security professional at a large organization. You mainly work with their research team. Part of your job is to ensure users on this team are authorized with the appropriate permissions. This helps keep the system secure. 
+
+            Your task is to examine existing permissions on the file system. You’ll need to determine if the permissions match the authorization that should be given. If they do not match, you’ll need to modify the permissions to authorize the appropriate users and remove any unauthorized access.
+
         <b>06) Add and Delete Users</b>
+                
         
         <b>07) Responsible Use of 'Sudo'</b>
         
         <b>08) Activity: Add and Manage Users with Linux Commands</b>
+                
     </pre>
     <h2>04.13 Get Help in Linux</h2>
     <pre>
