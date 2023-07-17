@@ -525,7 +525,22 @@
             Your task is to examine existing permissions on the file system. You’ll need to determine if the permissions match the authorization that should be given. If they do not match, you’ll need to modify the permissions to authorize the appropriate users and remove any unauthorized access.
 
         <b>06) Add and Delete Users</b>
-                
+             Authentication = proving a user is who they say they are in the system
+                adding new users to the system or to a group
+                removing users from group if department changes, or from system if employment status changes
+           
+            Root user = superuser 
+            
+            security risk to stay logged in as root user; can make irreversible mistakes as root user 
+
+            sudo = temporarily grant superuser permission ('Super User Do')
+               -> must be given sudo access in 'sudoers' configuration file 
+             
+            useradd = adds a user to the system
+                ex: sudo useradd salesrep7       - will add a user named 'salesrep7'
+            
+            userdel = delete a user from the system 
+                ex: sudo userdel salesrep7       - they didn't last long at all     
         
         <b>07) Responsible Use of 'Sudo'</b>
         
