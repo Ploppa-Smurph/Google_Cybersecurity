@@ -577,7 +577,11 @@
             ex: <i>sudo chown fgarcia access.txt</i>   - changes 'fgarcia' to the owner of the access.txt file
             ex: <i>sudo chown :security fgarcia access.txt</i>   - changes 'fgarcia' to owner of the 'security' group -- ':' indicates it is a group 
         
-        <b>08) Activity: Add and Manage Users with Linux Commands</b>         
+        <b>08) Activity: Add and Manage Users with Linux Commands</b> 
+              sudo useradd -g research_team researcher9    - create user resercher9 and make them part of the research_team
+              sudo chown researcher9 project_r.txt         - gives researcher 9 ownership of file project_r.txt
+              sudo usermod -a -G sales_team researcher9    - add user to sales_team supplemental group list  
+              
     </pre>
     <h2>04.13 Get Help in Linux</h2>
     <pre>
