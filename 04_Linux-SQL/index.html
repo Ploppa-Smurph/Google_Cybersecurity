@@ -581,18 +581,30 @@
               sudo useradd -g research_team researcher9    - create user resercher9 and make them part of the research_team
               sudo chown researcher9 project_r.txt         - gives researcher 9 ownership of file project_r.txt
               sudo usermod -a -G sales_team researcher9    - add user to sales_team supplemental group list  
-              
+
     </pre>
     <h2>04.13 Get Help in Linux</h2>
     <pre>
         <b>01) My Journey into Linux Commands</b>
-                    Damar -  
+                    Damar - use linux to currate logs
+                use linux to create bash jobs (automate) to help with routine tasks 
         
         <b>02) Linux Community</b>
+                huge online community for helping learn to use linux
         
         <b>03) Man Pages within the Shell</b>
+               man = 'manual',  displays information on commands in Linux and how they work
+
+               whatis  = gives a short description of a command on a single line 
+               apropos = search what command to use
+                 ex: apropos -a change password         - will look for the strings change & password in command manuals so you can find what command to use 
         
         <b>04) Linux Resources</b>
+                <a href="https://unix.stackexchange.com/">UNIX stack exchange -- lots of Linux and UNIX information</a>
+
+                man
+                apropos
+                whatis 
         
         <b>05) Activity: Get Help in the Command Line</b>
         
@@ -602,8 +614,30 @@
     <h2>04.14 Review: Linux Commands in the Bash Shell</h2>
     <pre>
         <b>01) Wrap-up</b>
+                - command line
+                - navigate and manage the file system
+                - authenticate and authorize users
+                - access learning resources
         
         <b>02) Glossary 04.03</b>
+                Absolute file path: The full file path, which starts from the root
+                Argument (Linux): Specific information needed by a command
+                Authentication: The process of verifying who someone is
+                Authorization: The concept of granting access to specific resources in a system
+                Bash: The default shell in most Linux distributions
+                Command: An instruction telling the computer to do something
+                File path: The location of a file or directory
+                Filesystem Hierarchy Standard (FHS): The component of the Linux OS that organizes data
+                Filtering: Selecting data that match a certain condition
+                nano: A command-line file editor that is available by default in many Linux distributions
+                Options: Input that modifies the behavior of a command
+                Permissions: The type of access granted for a file or directory
+                Principle of least privilege: The concept of granting only the minimal access and authorization required to complete a task or function
+                Relative file path: A file path that starts from the user's current directory
+                Root directory: The highest-level directory in Linux
+                Root user (or superuser): A user with elevated privileges to modify the system
+                Standard input: Information received by the OS via the command line
+                Standard output: Information returned by the OS through the shell
         
         <b>03) Quiz</b>
     </pre>
