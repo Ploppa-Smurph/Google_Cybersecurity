@@ -543,18 +543,41 @@
                 ex: sudo userdel salesrep7       - they didn't last long at all     
         
         <b>07) Responsible Use of 'Sudo'</b>
-            superuser =     
-            sudo = 
+            superuser =  Root user    
+            sudo = temporarily grant superuser permission ('Super User Do')
+
+            chmod = 
         
         for Authentication and Authorization
-            useradd = 
-            usermod = 
-            userdel =
-            chmod = 
-            chown = 
+            useradd = add a user to the system 
+                -g  = adds user to a primary group
+                -G  = adds user to supplemental groups
+
+            ex: <i>sudo useradd -g security fgarcia</i> - would add 'fgarcia' to the system with a primary group of 'security'   
+            
+            usermod = modifies an existing user 
+                -g    = changes existing primary group 
+                -G    = overwrites supplemental groups 
+                -a -G = ammends supplemental groups 
+                -d    = changes home directory
+                -l    = changes login name 
+                -L    = Locks account so no user login  
+            
+            ex: <i>sudo usermod -a -G marketing fgarcia</i>  - would ammend 'fgarcia' supplemental group list with 'marketing' group 
+            ex02: <i>sudo usermod -L fgarcia</i> - would Lock 'fgarcia' account so that they could not signin
+
+            userdel = delete a user from the system  (sometimes best to Lock account [usermod -L] first so you can view file ownership)
+                -r    = deletes user and files from user home directory
+            
+            ex: <i>sudo userdel -r fgarcia</i>   - will remove user and home directory files from the system 
+            
+            chown = change ownership of file or directory
+               enter ':' before group name to change group ownership 
+
+            ex: <i>sudo chown fgarcia access.txt</i>   - changes 'fgarcia' to the owner of the access.txt file
+            ex: <i>sudo chown :security fgarcia access.txt</i>   - changes 'fgarcia' to owner of the 'security' group -- ':' indicates it is a group 
         
-        <b>08) Activity: Add and Manage Users with Linux Commands</b>
-                
+        <b>08) Activity: Add and Manage Users with Linux Commands</b>         
     </pre>
     <h2>04.13 Get Help in Linux</h2>
     <pre>
