@@ -807,10 +807,39 @@
             <i>SELECT event_id, username, login_date FROM log_in_attempts WHERE event_id BETWEEN 100 AND 150;</i>
         
         <b>04) Filters AND, OR, and NOT</b>
+                AND - Multiple conditions must be met, specifies that both conditions must be met simultaneously.
+                  ex: <i>SELECT * FROM machines WHERE operating_system = 'OS 1' AND email_client = 'Email Client 1';</i>
 
-
+                OR  - either condition can be met
+                  ex: <i>SELECT * FROM machines WHERE operating_system = 'OS 1' OR operating_system = 'OS 3';</i>  
+                
+                NOT - negates a condition
+                  ex: <i>SELECT * FROM machines WHERE NOT operating_system = 'OS 3';</i>
 
         <b>05) More on Filters with AND, OR, and NOT</b>
+                AND - filters 2 conditions and specifies that both are met
+                   ex: <i>SELECT firstname, lastname, email, country, supportrepid FROM customers WHERE supportrepid = 5 AND country = 'USA';</i>
+
+                OR - filters 2 conditions and specifies either can be met
+                   ex: <i>SELECT firstname, lastname, email, country
+                        FROM customers
+                        WHERE country = 'Canada' OR country = 'USA';</i> 
+
+                NOT - only works on a single condition -- this operator negates a condition, SQL returns records that DO NOT match the conditions of query
+                  <> & != are both the same operator as NOT -- the following examples give the same results 
+                   ex: WHERE NOT country = 'USA';
+                   ex02: WHERE country <> 'USA';
+                   ex03: WHERE country != 'USA';
+
+                Combining Logical Operators:
+
+                can use AND and NOT together-
+                   ex: WHERE NOT country = 'Canada' AND NOT country = 'USA';
+                   ex02: WHERE coutry != 'Canada' AND country != 'USA';
+
+                
+
+
         
         <b>06) Activity: Filter with AND, OR, and NOT</b>
         
