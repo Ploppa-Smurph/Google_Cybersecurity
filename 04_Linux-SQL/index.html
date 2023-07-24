@@ -745,17 +745,77 @@
     
         <b>06) The WHERE Clause and Basic Operators</b>
                 <i>WHERE - indicates the condition for a filter</i>
+                % wildcard and the LIKE operator
 
-    
+                other wildcards -- 
+
+                'a_'    = as, an, a7, ...
+                'a__'   = ash, ant, add, a1c, ...
+                '%a'    = pizza, z6ra, a, ...
+                '_a'    = ma, 1a, Ha, ...
+                '%a%'   = Again, back, a, ...
+                '_a_'   = Car, ban, ea7, ...
+
+             LIKE -- operator used with wildcards (instead of =)
+
+             ex: <i>SELECT lastname, firstname, title, email FROM employees WHERE title LIKE 'IT%'</i>
+                will grab the last and firstname, the title and email from employees that match the filter criteria related to 'IT%', so any IT Staff, IT Manager, ... 
+
         <b>07) Activity: Filter a SQL Query</b>
-    
+               SELECT * FROM employees WHERE department = 'Finance';
+
+               SELECT device_id, username, department, office FROM employees WHERE office LIKE 'South%';
     </pre>
     <h2>04.17 More SQL Filters</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Filter Dates and Numbers</b>
+              Common Data Types -- 
+                    String Data = consisting of an ordered sequence of characters, can be letters, numbers, and characters 
+                    Numeric Data = consists of numbers
+                    Date & Time Data = represents date and time
+             
+             numerical operators - =  equal
+                                   >  greater than
+                                   <  less than
+                                   <> not equal         
+                                   >= greater than or equal to
+                                   <= less than or equal to  
+
+            ex: <i>SELECT * FROM log_in_attempts WHERE time > '18:00';</i>
+                will return all log-in attempts after 6pm (greater than 18:00 time)
+
+        BETWEEN operator - filters for numbers of dates within a range
+            ex: <i>SELECT * FROM machines WHERE OS_patch_date BETWEEN '2021-03-01' AND '2021-09-01'</i>
+                this returns machines that have received OS patches between March 1st 2021 and September 1st 2021              
+
+        <b>02) Operators for Filtering Dates and Numbers</b>
+                inclusive operator - operator that includes the value of comparison (ex: >= )
+                exclusive operator - operator that excludes the value of comparison (ex: > )
+        
+        <b>03) Activity: Apply more Filters in SQL</b>
+            In this scenario, you’re investigating a recent security incident.
+
+            You need to gather information about login attempts for certain dates and times. This will help in resolving a security incident.
+        
+            Here’s how you’ll do this task: First, you’ll retrieve login events made after a certain date. Second, you’ll narrow the focus of the search to filter logins in a date range. Third, you’ll investigate logins that were made at certain times. Finally, you’ll filter login attempts based on their event IDs.
+
+            <i>SELECT * FROM log_in_attempts WHERE login_date > '2022-05-09'</i>
+            <i>SELECT * FROM log_in_attempts WHERE login_date BETWEEN '' AND ''</i>
+            <i>SELECT * FROM log_in_attempts WHERE login_time < '07:00:00';</i>
+            <i>SELECT * FROM log_in_attempts WHERE login_time BETWEEN '06:00:00' AND '07:00:00' ORDER BY login_time;</i>
+            <i>SELECT event_id, username, login_date FROM log_in_attempts WHERE event_id >= 100;</i>
+            <i>SELECT event_id, username, login_date FROM log_in_attempts WHERE event_id BETWEEN 100 AND 150;</i>
+        
+        <b>04) Filters AND, OR, and NOT</b>
+
+
+
+        <b>05) More on Filters with AND, OR, and NOT</b>
+        
+        <b>06) Activity: Filter with AND, OR, and NOT</b>
+        
+        <b>07) Portfolio Activity: Apply Filters to SQL Queries</b>
+        
     </pre>
     <h2>04.18 SQL Joins</h2>
     <pre>
