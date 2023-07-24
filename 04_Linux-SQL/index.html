@@ -865,6 +865,11 @@
     <h2>04.18 SQL Joins</h2>
     <pre>
         <b>01) Join Tables in SQL</b>
+                employees.employee_id    = the 'employee_id' column on the 'employees' table
+                machines.employee_id      - the 'employee_id' column on the 'machines' table
+
+               INNER JOIN = return rows matching on a specified column that exists in more than 1 table
+                  ex: <i>SELECT username, office, operating_system FROM employees INNER JOIN machines ON employees.employee_id = machines.employee_id;</i>
 
         <b>02) Types of Joins</b>
 
