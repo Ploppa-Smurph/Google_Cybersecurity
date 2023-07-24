@@ -836,22 +836,48 @@
                 can use AND and NOT together-
                    ex: WHERE NOT country = 'Canada' AND NOT country = 'USA';
                    ex02: WHERE coutry != 'Canada' AND country != 'USA';
-
-                
-
-
         
         <b>06) Activity: Filter with AND, OR, and NOT</b>
+            In this scenario, you need to obtain specific information about employees, their machines, and the departments they belong to from the database.
+
+            Your team needs data to investigate potential security issues and to update computers.
         
+            You are responsible for filtering the required information from the database.
+        
+            Here’s how you’ll do this task: First, you’ll retrieve all failed login attempts after business hours. Second, you’ll retrieve all login attempts that occurred on specific dates. Third, you’ll retrieve logins that didn't originate in Mexico. Fourth, you’ll retrieve information about certain employees in the Marketing department. Fifth, you’ll retrieve information about employees in the Finance or the Sales department. Finally, you’ll obtain information about employees who are not in the Information Technology department.
+
+            <i>SELECT * FROM log_in_attempts WHERE login_time > '18:00' AND success = 0;</i>
+                       success = 0 (false) in SQL, boolean is represented as 'true' 1, or 'false' 0
+            <i>SELECT * FROM log_in_attempts WHERE login_date = '2002-05-09' OR login_date '2022-05-08';</i>
+            <i>SELECT * FROM log_in_attempts WHERE NOT country LIKE 'MEX%'</i>   
+            <i>SELECT * FROM employees WHERE department = 'Marketing' AND office LIKE 'East%';</i>
+            <i>SELECT * FROM employees WHERE department = 'Finance' OR department = 'Sales';</i>    
+            <i>SELECT * FROM employees WHERE NOT department = 'Information Technology';</i>
+
         <b>07) Portfolio Activity: Apply Filters to SQL Queries</b>
+        You are a security professional at a large organization. Part of your job is to investigate security issues to help keep the system secure. You recently discovered some potential security issues that involve login attempts and employee machines.
+
+        Your task is to examine the organization’s data in their employees and log_in_attempts tables. You’ll need to use SQL filters to retrieve records from different datasets and investigate the potential security issues.
         
+        Note: This scenario involves the same queries as the ones the Filter with AND, OR, and NOT 
+         lab. If you choose, it's also possible to complete this activity without revisiting the lab by typing your queries in the template.
     </pre>
     <h2>04.18 SQL Joins</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Join Tables in SQL</b>
+
+        <b>02) Types of Joins</b>
+
+        <b>03) Compare Types of Joins</b>
+
+        <b>04) Identify: Choose the Appropriate Type of Join</b>
+
+        <b>05) Activity: Complete a Join</b>
+
+        <b>06) Reading: Continous Learning in SQL</b>
+        
+        <b>07) Discussion: SQL and the Security Analyst</b>
+            <i>''</i>
     </pre>
     <h2>04.19 Review: Databases and SQL</h2>
     <pre>
