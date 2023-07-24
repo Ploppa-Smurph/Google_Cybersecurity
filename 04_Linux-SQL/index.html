@@ -650,20 +650,105 @@
                 - SQL Joins
 
         <b>02) Introduction to Databases</b>
+                <i>Database - organized collection of information / data</i>
+                            stores more information than a spreadsheet; to share with larger groups or users than spreadsheets, also
+                Databases can be stored by multiple users at 1 time, can store massive amounts of data
+                   databases can perform complex tasks while accessing data. 
+                
+                <i>Relational Database - structured database containing tables that are related to each other</i>        
+                    Tables contain fields of information      ex: employee table would have employee_id, device_id, username, etc... as fields on the table 
+                        'fields' are the <b>columns</b> of the database
+                    also contain records of information       ex: the specific information filled out in the columns
+                        'records' are the <b>rows</b> of the database
+                
+                with relational databases we can have 1 table about employees and 1 table pertaining to machine information
+                  we can then connect the 2 tables if they share a common column
+                  the shared column is known as a <b>'key'</b>
+
+                  2 types of keys: primary key = a column where every row has a unique entry; must not have any duplicate or null values
+                                   foreign key = column in a table that is a primary key in another table; can contain empty / duplicate values
 
         <b>03) Query Databases with SQL</b>
+                SQL (Structured Query Language) = programming language used to create, interact with, and request information from a database
+                Query - request from data from a database table or a combination of tables
+                Log - record of events that occur within an organization's systems
+
+             cybersecurity analysts query logs to go over machine settings, review visitors on a web app and tasks they perform
+                can find vulnerabilities and malicious activity by reviewing logs 
 
         <b>04) SQL Filtering versus Linux Filtering</b>
+                <i>sqlite3</i> - linux command that will bring up sqlite
+
+              Structure - SQL offers more structured filtering than Linux 
+                 ex: access log of employee log-in attempts, SQL will have each record seperated into columns
+                      linux simply prints the data as a line of text without additional organization 
+                        SQL offers a more readable and adjustable result
+                        
+              Joining Tables - SQL allows analysts to join data from different tables, Linux does not offer that functionality
+              
+              **Best Uses** SQL cannot be used with .txt file and therefore you must filter with Linux
 
         <b>05) SQL in Cybersecurity</b>
-               
+                I need to take some additonal coursework on SQL to get a deeper understanding 
+                  SQL is important to know in cybersecurity  
     </pre>
     <h2>04.16 SQL Queries</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Basic Queries</b>
+                SELECT - indicates which column to return
+                FROM - indicates which table to query
+                    ex:  SELECT employee_id, device_id FROM employees;      (; semicolon is placed at end of statement)
+                    ex:  SELECT * FROM employees;                           (will return all columns from the employees table)
+                Syntax - rules that determine what is correctly structured in a computing language     
+                    
+        <b>02) Query a Database</b>
+                    ex: <i>SELECT customer_id, city, country FROM customers;</i>
+                    
+                SELECT = which columns to return, select multiple columns by seperating with ',' comma
+                
+                FROM = which table to query
+
+                ORDER BY = helps organize data
+                    ex: SELECT customer_id, city, country FROM customers ORDER BY city;    
+                        SQL will return customer_id, city, and country columns from 'customers' table with records sequenced by 'city' column     
+                  also can sort ORDER BY with DESC order
+                    ex: SELECT customer_id, city, country FROM customers ORDER BY city DESC;
+                        add DESC to end and it will ORDER BY Descending order    
+                  can also ORDER BY multiple columns
+                    ex: SELECT customer_id, city, country FROM customers ORDER BY country, city; 
+                        will return columns from table in order of 'country' then 'city'   
+    
+        <b>03) Resources for Completing SQL Labs</b>
+    
+        <b>04) Activity: Perform a SQL Query</b>
+                SELECT device_id, operating_system, OS_patch_date FROM machines;
+
+                SELECT username, login_date, login_time FROM log_in_attempts
+    
+        <b>05) Basic Filters on SQL Queries</b>
+                Filtering - selecting data that matches certain conditions 
+                  ex: filter for logins from specific country 
+                
+                Operator - symbol or keyword that represents an operation 
+                  ex: country = 'USA'            -- the = operator finds records where the country field is USA
+
+                WHERE - indicates the condition for a filter  
+                  ex: WHERE country = 'USA'   
+                  
+               <i>SELECT * FROM log_in_attempts WHERE country = 'USA';</i>
+               
+               % acts as a wildcard when filtering - 
+               ex: WHERE office LIKE 'East%';
+                  you would get results East-120, East_Brooklyn, East150, Easterly... 
+
+               LIKE - we must use LIKE instead of = when using the % wildcard operator    
+    
+        <b>06) The WHERE Clause and Basic Operators</b>
+                <i>WHERE - indicates the condition for a filter</i>
+
+    
+        <b>07) Activity: Filter a SQL Query</b>
+    
     </pre>
     <h2>04.17 More SQL Filters</h2>
     <pre>
