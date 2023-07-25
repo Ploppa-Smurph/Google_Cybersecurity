@@ -881,29 +881,70 @@
                     ex: <i></i>
 
         <b>03) Compare Types of Joins</b>
+                INNER JOIN: only returns rows where there is a match 
+                    ex: <i>SELECT * FROM employees INNER JOIN machines ON employees.device_id = machines.device_id;</i>
+                LEFT JOIN: returns all of 1st table and matching rows from 2nd table
+                    ex: <i>SELECT * FROM employees LEFT JOIN machines ON employees.device_id = machines.device_id;</i>
+                RIGHT JOIN: returns all of 2nd table and matching rows from 1st 
+                    ex: <i>SELECT * FROM employees RIGHT JOIN machines ON employees.device_id = machines.device_id;</i>
+                FULL OUTER JOIN: returns all records from both tables
+                    ex: <i>SELECT * FROM employees FULL OUTER JOIN machines ON employees.device_id = machine.device_id;</i>
 
         <b>04) Identify: Choose the Appropriate Type of Join</b>
 
         <b>05) Activity: Complete a Join</b>
+                In this scenario, you’ll investigate a recent security incident that compromised some machines.
+
+                You are responsible for getting the required information from the database for the investigation.
+        
+                Here’s how you’ll do this task: First, you’ll use an inner join to identify which employees are using which machines. Second, you’ll use left and right joins to find machines that do not belong to any specific user and users who do not have any specific machine assigned to them. Finally, you’ll use an inner join to list all login attempts made by all employees.
+
+                <i>SELECT * FROM machines INNER JOIN employees ON machines.device_id = employees.device_id;</i>
+
+                <i>SELECT * FROM machines LEFT JOIN employees ON machines.device_id = employees.device_id;</i>
+
+                <i>SELECT * FROM machines RIGHT JOIN employees ON machines.device_id = employees.device_id;</i>
+
+                <i>SELECT * FROM employees INNER JOIN log_in_attempts ON employees.username = log_in_attempts.username;</i>
 
         <b>06) Reading: Continous Learning in SQL</b>
-        
+                Aggregate Functions:
+                    COUNT: returns a single number that represents the number of rows returned from your query 
+                    <i>SELECT COUNT(firstname) FROM customers;</i>   -- will count the # entries in the firstname, excluding NULL values
+                    <i>SELECT COUNT(firstname) FROM customers WHERE country = 'US';</i>
+
+                    AVG: returns single number that represents the average of the numerical data in a column 
+                    <i>SELECT AVG(age) FROM customers WHERE sex = 'M';</i>
+                    
+                    SUM: returns single number that represents the sum of the numerical data in a column
+                    <i>SELECT SUM(household) FROM customers;</i>
+
         <b>07) Discussion: SQL and the Security Analyst</b>
-            <i>''</i>
+            <i>'I never realized that SQL was so easily executed through the Linux Command Line. I plan on taking an additional course in SQL after I complete the Coursera Google Cybersecurity coursework. SQL is a powerful and complex tool to have access to. 
+
+                Being able to query information from datasets quickly will inform decisions. Having data to backup a cybersecurity analysts suggestions are key to communicating with their team and with all stakeholders.'</i>
     </pre>
     <h2>04.19 Review: Databases and SQL</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Wrap-up</b>
+            - Relational Databases
+            - SQL Queries
+            - SQL Filters
+            - SQL Joins
+
+        <b>02) Glossary Terms from wk 4</b>
+        <b>03) Quiz</b>
     </pre>
     <h2>04.20 Congratulations on Completing Course 04</h2>
     <pre>
-        <b>01) </b>
-        <b>02) </b>
-        <b>03) </b>
-        <b>04) </b>
+        <b>01) Course Wrap-up</b>
+
+        <b>02) Glossary Course 4</b>
+
+        <b>03) Discussion: Your Course 4 Learning Journey</b>
+             <i>' '</i>
+             
+        <b>04) Getting Started on the Next Course</b>
     </pre>
 </body>
 </html>
