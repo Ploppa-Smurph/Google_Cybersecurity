@@ -512,10 +512,42 @@
         SSO and MFA are often used in conjunction with one another to layer defense capabilities
 
     <b>02) The Rise of SSO and MFA</b>
+            Single Sign-on eliminates the number of passwords and usernames people have to remember
+              allows companies to reduce costs by streamlining how they manage connected devices 
+              and improves overall security by reducing the number of access points attackers can target 
+
+            how SSO works: uses trusted 3rd party encrypted access tokens
+               LDAP (Lightweight Directory Access Protocol) - transmit information on-premises
+               SAML (Security Assertion Markup Language) - mostly used for off-premises security (ex: the cloud)
+
+            MFA (Multi-factor Authentication) - user must provide 2FA or 3FA by providing:
+                - Something user knows: commonly user name and password 
+                - Something user has: received from service provider; ex: OTP one-time passcode sent via text
+                - Something user is: physical scan; ex: fingerprint, retinal scan    
 
     <b>03) Mechanisms of Authorization</b>
+                AAA Framework: 
+                  - Authentication - prove you are who you say
+                  - Authorization - access to least information user needs; what the user is allowed to do 
+                  - Accountability - 
+
+               Authorization is linked to Principle of Least Privilege
+                     access to information should last as long as needed
+               
+               Seperation of Duties - principle that users should not be given levels of authorization that would allow them to misuse a system 
+
+               HTTP Basic auth - Hypertext Transfer Protocol
+                   Basic auth works by sending an identifier every time a user communicates with a web page
+
+                HTTPS secure, more secure protocol    
+
+               OAuth - open standard authorization protocol that share designated access between applications
+                  uses API tokens to verify access between you and service provider  
+                  
+            API Token - small block of encrypted code that contains information about a user    
 
     <b>04) Why We Audit User Activity</b>
+            
 
     <b>05) Finding Purpose in Protecting Assets</b>
 
