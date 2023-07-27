@@ -414,8 +414,26 @@
 
         many websites use both Asymmetric and Symmetric encryption. Asymmetric is when you first login and verify username and password,
           then when user is verified the rest of the communication switches to Symmetric encryption for quicker communication.
-           
+
     <b>04) Activity: Decrypt an Encrypted Message</b>
+        You have multiple tasks in this lab:
+          - List the contents of a directory
+          - Read the contents of files
+          - Use Linux commands to revert a classical cipher back to plaintext
+          - Decrypt an encrypted file and restore the file to its original state
+
+          In this scenario, all of the files in your home directory have been encrypted. You’ll need to use Linux commands to break the Caesar cipher and decrypt the files so that you can read the hidden messages they contain.
+
+            Here’s how you’ll do this task: First, you’ll explore the contents of the home directory and read the contents of a file. Next, you’ll find a hidden file and decrypt the Caesar cipher it contains. 
+              Finally, you’ll decrypt the encrypted data file to recover your data and reveal the hidden message.
+
+              <i>cat .leftShift3 | tr "d-za-cD-ZA-C" "a-zA-Z"</i>  
+                 - The tr command translates text from one set of characters to another, using a mapping. The first parameter to the tr command represents the input set of characters, and the second represents the output set of characters. 
+                   Hence, if you provide parameters “abcd” and “pqrs”, and the input string to the tr command is “ac”, the output string will be “pr".
+
+              <i>openssl aes-256-cbc -pbkdf2 -a -d -in Q1.encrypted -out Q1.recovered -k ettubrute</i>     
+                  - In this instance, the openssl command reverses the encryption of the file with a secure symmetric cipher, as indicated by AES-256-CBC. The -pbkdf2 option is used to add extra security to the key, and -a indicates the desired encoding for the output. 
+                    The -d indicates decrypting, while -in specifies the input file and -out specifies the output file. The -k specifies the password, which in this example is ettubrute.  
 
     <b>05) Non-repudiation and Hashing</b>
 
