@@ -453,29 +453,67 @@
            Hash values assist with matters of non-repudiation   
 
     <b>06) Evolution of Hash Functions</b>
+            non-repudiation - authenticty of information cannot be denied 
+            hash function - algorithm that produces code that can't be decrypted
+
+            the longer the hash value the more secure 
+                MD5 is 128-bit value
+
+           Hash Collisions - different inputs can result in the same output (due to short hash lengths)
+             MD5 is only 32 characters in length and vulnerable to hash collision     
+
+             SHA-1
+             SHA-224
+             SHA-256
+             SHA-384
+             SHA-512
+
+          Rainbow Table = file of pre-generated hash values and associated plaintext, a dictionary of weak passwords
+          
+          Salting - additional safeguard to strengthen hash function
+             salt is a random string of characters that is added to data before it is hashed
+             Salting helps make data more resilient to Rainbow Table Attacks
 
     <b>07) Activity: Create Hash Values</b>
+            You have multiple tasks in this lab:
+                - List the contents of the home directory
+                - Compare the plain text of the two files presented for hashing
+                - Compute the sha256sum hash of the two separate files
+                - Compare the hashes provided to identify the differences
 
+                In this scenario, we need to investigate whether two files are identical or different.
+
+                Here’s how you'll do this task: First, you’ll display the contents of two files and create hashes for each file. 
+                  Next, you’ll examine the hashes and compare them.   
+
+            <i><b>cmp</b></i> - compare command - compares 2 files byte by byte
+                  reports the byte and line number where the 1st difference is found       
 </pre>
 <h2>05.08 Authentication, Authorization, and Accounting</h2>
 <pre>
-    <b>01) </b>
+    <b>01) Access Controls and Authentication Systems</b>
 
-    <b>02) </b>
+    <b>02) The Rise of SSO and MFA</b>
 
-    <b>03) </b>
+    <b>03) Mechanisms of Authorization</b>
 
-    <b>04) </b>
+    <b>04) Why We Audit User Activity</b>
+
+    <b>05) Finding Purpose in Protecting Assets</b>
+
+    <b>06) Identity and Access Management</b>
+
+    <b>07) Activty: Improve Authentication, Authorization, and Accounting for a Small Business</b>
+
 </pre>
 <h2>05.09 Review: Protect Orginizational Assets</h2>
 <pre>
-    <b>01) </b>
+    <b>01) Wrap-up</b>
 
-    <b>02) </b>
+    <b>02) Glossary 05 wk02</b>
 
-    <b>03) </b>
+    <b>03) Quiz</b>
 
-    <b>04) </b>
 </pre>
 <h2>05.10 </h2>
 <pre>
