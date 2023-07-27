@@ -366,8 +366,55 @@
     <b>02) Public Key Infrastructure</b>
             PKI (Public Key Infrastructure) = encryption framework that secures exchange of information online 
 
-    <b>03) Symmetric and Asymmetric Encryption</b>
+            Asymmetric Encryption = uses public and private key pair for encryption and decryption of data
+            Symmetric Encryption = uses a single secret key to exchange information; faster and LESS secure 
 
+            PKI 1: exchanges encrypted information 
+                2: establish trust using a system of digital certificates
+               
+            Digital Certificate = file that verifies the identity of a public key holder    
+
+                In PKI, data can be encrypted using asymmetric encryption, symmetric encryption, or both. 
+                Then, a digital certificate binds the data's public key to the verified identity of a website, individual, organization, device, or server.   
+
+             1. Certificate Authority recieves basic information about company and website   
+             2. Certificate Authority uses public key and organization's basic information to confirm company's identity
+             3. When the information is confirmed the Certificate Authority encrypts the data with the CA's Private Key
+             4. the Digital Certificate is created that contains encrypted company data and the CA's digital signature to prove authenticity
+
+    <b>03) Symmetric and Asymmetric Encryption</b>
+            Encryption = process of converting data from a readable format to an encoded format
+            Public Key Infrastructure (PKI) = encryption framework that secures exchange of online information
+            Cipher = algorithm that encrypts information
+
+            Symmetric encryption = single secret key to exchange information 
+            Asymmetric encryption = public and private key pair for encrypting and decrypting data
+               public key -> encrypts the data
+               private key -> decrypts the data  
+
+         ciphers are vulnerable to Brute Force Attacks -- make a long and complex key 
+
+         Approved Algorithms: 
+             Symmetric Algorithms - 
+                - Triple DES (3DES) - known as a block cipher. converts plaintext into ciphertext in 'blocks'
+                   developed in the 1970s. 3DES = 192 bit keys
+                - Advanced Encryption Standard (AES) - AES generates keys that are 128, 192, or 256 bit. 
+                
+             Asymmetric Algorithms -
+                - Rivest Shamir Adleman (RSA) - named for the 3 creators
+                  used to protect Highly Sensitive Data - uses keys of 1024, 2048, or 4096 bits!
+                - Digital Signature Algorithm (DSA) - introduced by NIST in 1990s. key lenght of 2048 bits.      
+
+         Generating Keys: OpenSSL -- can be used to generate public and private keys
+         
+         ** Heartbleed Bug ** -- vulnerability in OpenSSL, exposed sensitive data in the memory of sites and applications. 
+                demonstrated the importance of patching
+
+        Obscurity is NOT Security  = a cryptographic system should NOT be considered secure if it requres secrecy around how it works         
+
+        many websites use both Asymmetric and Symmetric encryption. Asymmetric is when you first login and verify username and password,
+          then when user is verified the rest of the communication switches to Symmetric encryption for quicker communication.
+           
     <b>04) Activity: Decrypt an Encrypted Message</b>
 
     <b>05) Non-repudiation and Hashing</b>
