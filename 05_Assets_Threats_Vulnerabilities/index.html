@@ -688,25 +688,115 @@
                    2) Consider Potential Exploits:
                    3) Prepare Defenses against Threats: 
                    4) Evaluate those Defenses:
-                    
+
+            having a widerange of backgrounds and input to the thought process when finding and dealing with exploits is a bonus 
+              --diversity is important--  
+
+            <b><i>Zero-Day Exploit - exploit that was previously unknown</i></b> 
+                    the exploit is happening in real-time with 0 days to fix it
+
+            zero-day exploits are extremely dangerous and represent threats that have not been planned for yet
 
     <b>03) Defense in Depth Strategy</b>
+            Layered Defense  
+          <b><i>Defense in Depth - layered approach to vulnerability management that reduces risk</i></b>  
+                sometimes referred to as a 'Castled Approach' to defense, because of the defense walls that protect the inside of the medieval castle
+
+          all these layers helped stop some security breaches, then one only has to stop the next breach, and find a tool that can stop additonal breaches, etc... 
+          
+          <b>Defense In Depth</b>
+                1) Perimeter Layer   - user 'Authentication' level. filters non-authinticated users to prevent them from accessing the next layer of defense; ex: usernames and passwords 
+                2) Network Layer     - closely aligned with 'Authorization' level; ex: network firewalls, 
+                3) Endpoint Layer    - endpoints are user devices; ex: laptop, desktop, tablet, smartphone, etc... -- use anti-virus software at this layer
+                4) Application Layer - ex: multifactor authentication 
+                5) Data Layer        - refers to the data that must be protected
 
     <b>04) Common Vulnerabilities and Exposures</b>
+            vulnerability - key weakness that can be exploited on a system
+            <b><i>Exposure - a mistake that can be exploited by a threat</i></b>
+
+            <b><i>Common Vulnerability and Exposures list (CVE list) - openly accessible dictionary of known vulnerabilities and exposures</i></b> 
+                        originally composed in 1999 by MITRE a collection of non-profit research and development centers (sponsored by government)
+
+            <b><i>CNA (CVE Numbering Authority) - organization that volunteers to analyze and distribute information on eligible CVEs</i></b>
+                  4 CVE list criteria:
+                    1) Independent of other issues (independantly fixable)
+                    2) Recognized as a potential security risk
+                    3) Submitted with supporting evidence
+                    4) Only affect one codebase
+
+            <b><i>CVSS (Common Vulnerability Scoring System) - measurement system that scores the severity of a vulnerability</i></b>
+                    NIST National Vulnerabilities Database provides a base score of CVEs on a 0 - 10 scale.        
+                      CVSS score of 4 or less (below 4) are 'Low Risk' 
+                           score of 9 or more (above 9) are 'Critical Risk' and need to be addressed immediately 
+
+            security teams commonly use CVE list and CVSS scores as part of their vulnerability management strategy
+               ** recommendation ** always update software before applying a patch               
 
     <b>05) OWASP Top 10</b>
+            Open Worldwide Application Security Project (OWASP)  - nonprofit that works to improve security of software. 
+                open platform that security professionals from around the world use to share information, tools, and events
+
+           <b>Common Vulnerabilities</b>
+                - Broken Access Control - assuring all access control limits are up and working
+                - Cryptographic Failure - PII and SPII should be encrypted
+                - Injection - malicious code is inserted into a vulnerable application; gives threat actors a back door
+                - Insecure Design - applications should be designed were they are resilient to attack, if not they suffer from insecure design 
+                - Security Misconfiguration - occurs when security settings are properly configured or maintained
+                - Vulnerable and outdated components - old programming libraries that are vulnerable or no longer maintained being added to a new application 
+                - Identification and Authentication Failures - failure on the applications part to recognize who should have access and what they are authorized to do
+                - Software and Data Integrity Failures - when updates / patches are not reviewed before implementation. Can have 'downstream' effects. 
+                            if a 3rd party becomes infected it is known as a 'supply chain attack'
+                - Security Logging and Monitoring Failures - making certain to log and have records of login attempts     
+                - Server-Side Request Forgery (SSRFs) - attacker manipulates normal operations of server to read or update resources on that server.
 
     <b>06) Open Source Intelligence</b>
+            <b><i>OSINT Open Source Intelligence</i></b>
+                used to help identify potential threats and vulnerabilities. 
+
+        <b>Information vs Intelligence</b>
+            Information - refers to the raw data or facts
+            Intelligence - analysis of the information to produce knowledge or insight
+
+            intelligence is derived from information through the process of analysis, interpretation, and integration. 
+
+        InfoSEC (Information Security) - keeping data in all states away from unauthorized users. 
+        
+        it is important to review OSINT and threat forums to discover weakness in popular software (or anything the organization utalizes)
+          so you can quickly assess the risk, prioritize patching efforts, and implement necessary safeguards to prevent an attack. 
+
+    use OSINT to: 
+        - provide insight into cyber attacks
+        - detect potential data exposures
+        - evaluate exisiting defenses
+        - identify unknown vulnerabilities
+
+    Collecting Intelligence is part of the 'Vulnerabiity Management' process    
+
+<b>OSINT Tools</b>
+    - VirusTotal <a href="https://www.virustotal.com/gui/home/upload">link to VirusTotal</a>
+        site where you can put files, domains, URLs, and IP addresseses in to analyze for malicious content
+    - MITRE ATT&CK <a href="https://attack.mitre.org/#">link to MITRE ATT&CK</a>
+        Adversary Tactics and Techniques website
+    - OSINT Framework <a href="https://osintframework.com/">link to OSINT Framework</a>
+        site that hosts OSINT tools
+    - Have I been Pwned <a href ="https://haveibeenpwned.com/">link to 'Have I been Pwned'</a>
+        site to see if email account has been breached
 </pre>
 <h2>05.11 Identify System Vulnerabilities</h2>
 <pre>
-    <b>01) </b>
+    <b>01) Video: Vulnerability Assessments</b>
 
-    <b>02) </b>
+    <b>02) Reading: Approaches to Vulnerability Scanning</b>
 
-    <b>03) </b>
+    <b>03) Reading: Importance of Updates</b>
 
-    <b>04) </b>
+    <b>04) Video: My Learning Journey into Cybersecurity with Omad</b>
+
+    <b>05) Reading: Penetration Testing</b>
+
+    <b>06) Practice Quiz: Portfolio Activity: Analyze a Vulnerable System for a Small Business</b>
+            with exemplar
 </pre>
 <h2>05.12 Cyber Attacker Mindset</h2>
 <pre>
